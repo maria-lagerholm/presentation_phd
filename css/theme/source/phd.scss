@@ -1,0 +1,303 @@
+/**
+ * PhD Defense Theme for reveal.js
+ * Academic style with elegant animations and decorative elements
+ */
+
+@use "sass:color";
+@import "../template/mixins";
+@import "../template/settings";
+
+// Academic Color Palette
+$academicNavy: #1a3a5c;
+$academicGold: #c9a227;
+$academicCream: #ffffff;
+$academicDarkText: #2c3e50;
+$academicLightGold: #e8d48c;
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+// Theme settings
+$backgroundColor: $academicCream;
+$mainColor: $academicDarkText;
+$headingColor: $academicNavy;
+$mainFontSize: 32px;
+$mainFont: 'Lora', 'Georgia', 'Times New Roman', serif;
+$headingFont: 'Crimson Text', 'Georgia', serif;
+$headingFontWeight: 600;
+$headingLetterSpacing: 0.02em;
+$headingTextTransform: none;
+$headingTextShadow: none;
+$linkColor: $academicNavy;
+$linkColorHover: $academicGold;
+$selectionBackgroundColor: rgba($academicGold, 0.4);
+
+$heading1Size: 2.0em;
+$heading2Size: 1.5em;
+$heading3Size: 1.2em;
+$heading4Size: 1.0em;
+
+$overlayElementBgColor: 0, 0, 0;
+$overlayElementFgColor: 240, 240, 240;
+
+@include dark-bg-text-color(#fff);
+@import "../template/theme";
+
+/*********************************************
+ * ANIMATIONS
+ *********************************************/
+@keyframes floatCircle1 { 0%,100%{transform:translate(0,0) scale(1)} 25%{transform:translate(30px,-20px) scale(1.1)} 50%{transform:translate(-20px,30px) scale(0.95)} 75%{transform:translate(25px,15px) scale(1.05)} }
+@keyframes floatCircle2 { 0%,100%{transform:translate(0,0) scale(1)} 25%{transform:translate(-25px,25px) scale(0.9)} 50%{transform:translate(35px,-15px) scale(1.1)} 75%{transform:translate(-15px,-25px) scale(1)} }
+@keyframes floatCircle3 { 0%,100%{transform:translate(0,0) scale(1)} 25%{transform:translate(20px,35px) scale(1.05)} 50%{transform:translate(-30px,-20px) scale(0.95)} 75%{transform:translate(15px,-30px) scale(1.1)} }
+@keyframes pulseGlow { 0%,100%{opacity:0.3} 50%{opacity:0.6} }
+@keyframes elegantFadeDown { from{opacity:0;transform:translateY(-40px)} to{opacity:1;transform:translateY(0)} }
+@keyframes elegantFadeUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+@keyframes floatIn { from{opacity:0;transform:translate(var(--tx),var(--ty)) scale(0.9)} to{opacity:1;transform:translate(0,0) scale(1)} }
+
+/*********************************************
+ * GLOBAL STYLES & DECORATIVE ELEMENTS
+ *********************************************/
+%circle-base { content:''; position:fixed; border-radius:50%; pointer-events:none; z-index:0; }
+@mixin circle($w, $p, $c, $o, $a) { width:$w; height:$w; @each $s,$v in $p { #{$s}:$v; } background:radial-gradient(circle,rgba($c,$o) 0%,transparent 70%); animation:$a; }
+
+.reveal-viewport {
+	background: linear-gradient(135deg, $academicCream 0%, darken($academicCream, 3%) 100%);
+	position: relative; overflow: hidden;
+	&::before, &::after { @extend %circle-base; }
+	&::before { @include circle(400px, (top:-100px, right:-100px), $academicGold, 0.15, (floatCircle1 20s ease-in-out infinite, pulseGlow 8s ease-in-out infinite)); }
+	&::after { @include circle(300px, (bottom:-80px, left:-80px), $academicNavy, 0.1, (floatCircle2 25s ease-in-out infinite, pulseGlow 10s ease-in-out infinite 2s)); }
+}
+
+.reveal {
+	line-height: 1.6; z-index: 1;
+	&::before, &::after { @extend %circle-base; }
+	&::before { @include circle(250px, (top:50%, left:-50px), $academicLightGold, 0.12, (floatCircle3 18s ease-in-out infinite, pulseGlow 12s ease-in-out infinite 4s)); }
+	&::after { @include circle(200px, (bottom:20%, right:-30px), $academicNavy, 0.08, (floatCircle1 22s ease-in-out infinite reverse, pulseGlow 9s ease-in-out infinite 1s)); }
+
+	.slides section {
+		transition: all 1.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+		&.present {
+			h1, h2, h3 { animation: elegantFadeDown 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; }
+			p, img, li, table { animation: elegantFadeUp 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; opacity: 0; animation-fill-mode: forwards; }
+			p, img { animation-delay: 0.2s; }
+			li, table { animation-delay: 0.3s; }
+		}
+
+		&[data-no-animation] {
+			&.present {
+				h1, h2, h3, p, img, li, table, div, .fragment {
+					animation: none !important;
+					opacity: 1 !important;
+					visibility: visible !important;
+					transform: none !important;
+					transition: none !important;
+				}
+			}
+		}
+	}
+
+	h1 { border-bottom: 2px solid $academicGold; padding-bottom: 0.3em; display: inline-block; }
+	h3 { color: darken($academicNavy, 5%); }
+	p { text-align: left; line-height: 1.7; margin-bottom: 1em; }
+	em, i { font-style: italic; }
+
+	blockquote {
+		background: rgba($academicNavy, 0.03); border-left: 4px solid $academicGold; padding: 1em 1.5em; margin: 1.5em 0; 
+		font-style: italic; color: darken($mainColor, 10%); box-shadow: none; width: auto;
+	}
+
+	ul, ol { text-align: left; margin-left: 1.5em; }
+	li { margin-bottom: 0.5em; line-height: 1.6; }
+	ul li::marker { color: $academicGold; }
+	ol li::marker { color: $academicNavy; font-weight: 600; }
+
+	section img { 
+		border: none; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-radius: 4px; transition: all 0.3s ease;
+		&:hover { transform: scale(1.02); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+	}
+
+	table {
+		border-collapse: collapse; margin: 1.5em auto; font-size: 0.85em;
+		th { background: $academicNavy; color: white; padding: 0.8em 1em; font-weight: 600; }
+		td { padding: 0.6em 1em; border-bottom: 1px solid rgba($academicNavy, 0.15); }
+		tr:nth-child(even) { background: rgba($academicNavy, 0.03); }
+	}
+
+	.slide-number { font-family: $headingFont; font-size: 14px; color: $academicNavy; background: rgba(255,255,255,0.8); padding: 8px 12px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+	.progress { background: rgba($academicNavy, 0.1); color: $academicGold; height: 4px; }
+	a { border-bottom: 1px dotted $academicGold; transition: all 0.3s ease; &:hover { color: $academicGold; border-bottom-style: solid; } }
+	pre { background: #2d3436; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+	code { font-family: 'Fira Code', 'Monaco', 'Consolas', monospace; font-size: 0.9em; }
+
+	.slides section.title-slide {
+	text-align: center;
+		h1, h2, h3 { border-bottom: none; display: block; font-size: 1.1em; line-height: 1.4; margin: 0.8em 0; padding: 0 1em; }
+		p { text-align: center; margin: 0.2em 0; }
+		.logo-container { position: absolute; top: 20px; left: 0; right: 0; display: flex; justify-content: space-between; padding: 0 30px; pointer-events: none; }
+		.uni-logo { height: 160px; border: none !important; box-shadow: none !important; margin: 0 !important; background: transparent !important; pointer-events: auto; &:hover { transform: none !important; } }
+		.university-info { margin-top: 160px; margin-bottom: 0.6em; p { font-family: $headingFont; font-size: 0.7em; color: $academicNavy; margin: 0.1em 0; font-weight: 600; letter-spacing: 0.05em; } }
+		.defense-label { font-size: 0.75em !important; color: $academicGold !important; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; margin: 0.8em 0 !important; border-top: 1px solid rgba($academicGold, 0.3); border-bottom: 1px solid rgba($academicGold, 0.3); padding: 0.4em 0; display: inline-block; }
+		.author-info { margin: 0.6em 0; p { font-size: 0.55em !important; color: $mainColor; margin: 0.15em 0 !important; } strong { color: $academicNavy; } }
+		.year { font-size: 0.6em !important; color: #666 !important; margin-top: 0.8em !important; font-weight: 500; }
+	}
+
+	.why-main-slide {
+		.why-title { font-size: 4em !important; color: $academicGold; margin-top: 0.5em !important; border: none !important; }
+		.drill-down-menu {
+			display: flex; justify-content: space-around; width: 100%; margin-top: 2em; gap: 1em;
+			.menu-item {
+				flex: 1; padding: 1.5em 1em; background: rgba($academicNavy, 0.03); border: 1px solid rgba($academicGold, 0.2); border-radius: 8px; cursor: pointer; transition: all 0.3s ease;
+				&:hover { background: rgba($academicGold, 0.05); border-color: $academicGold; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+				h4 { font-size: 0.8em !important; color: $academicNavy; margin: 0 !important; pointer-events: none; }
+				p { font-size: 0.5em; color: #666; text-align: center; margin: 0.5em 0 0 0; pointer-events: none; }
+			}
+		}
+		.hint { font-size: 0.4em; color: #999; margin-top: 2em; font-style: italic; }
+	}
+
+	// Salmonella Graph Animation
+	.salmonella-graph {
+		width: 100%; height: auto; max-height: 350px; margin-top: 10px;
+		svg { width: 100%; height: auto; background: transparent !important; }
+		path[id^="line__"] {
+			stroke-dasharray: 2000;
+			stroke-dashoffset: 2000;
+			transition: stroke-dashoffset 3s ease-in-out;
+		}
+	}
+	section.present .salmonella-graph path[id^="line__"] {
+		stroke-dashoffset: 0;
+	}
+
+	.fragment { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); &.fade-in { opacity: 0; &.visible { opacity: 1; } } &.grow { transform: scale(0.9); &.visible { transform: scale(1); } } }
+
+	// Research Roadmap Styles
+	.research-roadmap {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: auto auto auto;
+		gap: 15px;
+		margin-top: 20px;
+		position: relative;
+		font-size: 0.45em;
+
+		.node {
+			padding: 12px;
+			border-radius: 8px;
+			color: white;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			position: relative;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+			z-index: 2;
+			min-height: 80px;
+			
+			h5 { color: white !important; margin: 0 0 5px 0 !important; font-size: 1.1em !important; font-weight: 700 !important; border: none !important; padding: 0 !important; }
+			p { margin: 0 !important; font-size: 0.85em !important; line-height: 1.2 !important; text-align: center !important; }
+			
+			&.exp { background: $academicNavy; border: 2px solid darken($academicNavy, 5%); }
+			&.form { background: #27ae60; border: 2px solid darken(#27ae60, 5%); } // Green for Bio/Formulation
+			&.comp { background: $academicGold; border: 2px solid darken($academicGold, 5%); } // Gold for Computational
+			&.outcome { background: #e67e22; border: 2px solid darken(#e67e22, 5%); } // Orange for Outcomes
+			
+			&::after {
+				content: '➔';
+				position: absolute;
+				right: -25px;
+				color: #ccc;
+				font-size: 1.5em;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			&.no-arrow::after { display: none; }
+			&.down-arrow::after {
+				content: '➔';
+				right: 50%;
+				bottom: -30px;
+				top: auto;
+				transform: translateX(50%) rotate(90deg);
+			}
+			&.up-arrow::after {
+				content: '➔';
+				right: 50%;
+				top: -30px;
+				transform: translateX(50%) rotate(-90deg);
+			}
+		}
+
+		.path-label {
+			grid-column: 1 / span 6;
+			font-family: $headingFont;
+			color: $academicNavy;
+			font-weight: 600;
+			text-align: left;
+			margin-bottom: 5px;
+			border-bottom: 1px solid rgba($academicNavy, 0.1);
+		}
+	}
+
+	// Speaker Notes Styling
+	.notes {
+		display: none; 
+		background: #ffffff !important;
+		color: #333333 !important;
+		padding: 20px !important;
+		border: 3px solid $academicNavy !important;
+		border-radius: 12px !important;
+		font-family: 'Lora', serif !important;
+		font-size: 0.8em !important;
+		line-height: 1.6 !important;
+		text-align: left !important;
+		
+		div, p, span, li, h3, h4, strong {
+			background: transparent !important;
+			color: #333333 !important;
+		}
+
+		h3, h4, strong { color: $academicNavy !important; }
+	}
+
+	// Fix for the actual Speaker View window
+	body.reveal-speaker-view {
+		background-color: #ffffff !important;
+		color: #333333 !important;
+		.speaker-controls-notes {
+			background-color: #ffffff !important;
+			color: #333333 !important;
+			.value { color: #333333 !important; }
+		}
+	}
+
+	.acknowledgments-slide {
+	text-align: center;
+		h2 { font-size: 1.3em; margin-bottom: 0.3em; color: $academicNavy; }
+		.ack-subtitle { font-size: 0.5em !important; color: #666 !important; font-style: italic; margin-bottom: 1em !important; }
+		.collaborators-network { display: flex; flex-direction: column; align-items: center; gap: 0.8em; }
+		.collab-row { display: flex; justify-content: center; align-items: flex-start; gap: 1.2em; flex-wrap: wrap; &.mentors-row { margin-bottom: 0.5em; .collaborator { transform: scale(1.1); } .collab-img-wrapper { width: 85px; height: 85px; border-width: 4px; } } }
+		.collaborator { display: flex; flex-direction: column; align-items: center; width: 120px; text-align: center; opacity: 0; }
+		.collab-img-wrapper { 
+			width: 70px; height: 70px; border-radius: 50%; overflow: hidden; border: 3px solid $academicGold; box-shadow: 0 4px 15px rgba($academicNavy, 0.2); transition: all 0.4s ease; background: #fff;
+			&:hover { transform: scale(1.1); box-shadow: 0 6px 25px rgba($academicGold, 0.4); }
+			img { width: 100% !important; height: 100% !important; max-width: 100% !important; max-height: 100% !important; object-fit: cover; object-position: center 20%; border: none !important; box-shadow: none !important; margin: 0 !important; padding: 0 !important; display: block; &.zoom-in { transform: scale(1.5); object-position: center 30%; } &.zoom-in-more { transform: scale(2.8); object-position: center 40%; } &.zoom-out { transform: scale(0.75); object-position: center center; } }
+		}
+		.collab-name { font-size: 0.38em !important; font-weight: 600; color: $academicNavy !important; margin: 0.4em 0 0.15em 0 !important; line-height: 1.2; white-space: nowrap; }
+		.collab-affiliation { font-size: 0.26em !important; color: #666 !important; margin: 0 !important; line-height: 1.3; font-style: italic; max-width: 100%; }
+
+		&.present {
+	$offsets: ((-80px, -35px), (80px, -35px), (-60px, 0), (-30px, -25px), (0, -40px), (30px, -25px), (60px, 0));
+	@for $r from 1 through 4 {
+		$items: if($r == 1, 2, 5);
+		@for $c from 1 through $items {
+			.collab-row:nth-child(#{$r}) .collaborator:nth-child(#{$c}) {
+						$idx: if($r == 1, $c, $c + 2); $off: nth($offsets, $idx);
+				--tx: #{nth($off, 1)}; --ty: #{nth($off, 2)};
+				animation: floatIn #{2.7s - ($r * 0.2s)} ease-in-out #{0.1s * (($r - 1) * 5 + $c + if($r > 1, -3, 0))} forwards;
+			}
+		}
+	}
+}
+	}
+}

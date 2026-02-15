@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Chemical characterisation of essential oils and machine learning analysis of molecular substructures associated with antimicrobial activity against Salmonella Typhimurium for food industry applications</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/phd.css">
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style>
+			/* Zoom functionality for images */
+			.zoom-image {
+				cursor: zoom-in;
+				transition: opacity 0.3s ease;
+				max-height: 220px;
+				width: auto;
+				display: block;
+				margin: 0 auto;
+			}
+			
+			/* Zoom overlay - created via JavaScript */
+			.zoom-overlay {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				background: rgba(0, 0, 0, 0.95);
+				z-index: 999999;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: zoom-out;
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			
+			.zoom-overlay img {
+				max-width: 95vw;
+				max-height: 95vh;
+				width: auto;
+				height: auto;
+				object-fit: contain;
+				border-radius: 4px;
+				box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<!-- Slides will be loaded here dynamically -->
+			<div class="slides">
+				<section data-external="slides/title.html"></section>
+				<section data-external="slides/acknowledgments.html"></section>
+				<section data-external="slides/outline.html"></section>
+				<section data-external="slides/why.html"></section>
+				<section data-external="slides/why_salmonella.html"></section>
+				<section data-external="slides/why_eos.html"></section>
+				<section data-external="slides/why_ml.html"></section>
+				<section data-external="slides/conclusions.html"></section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+		<script>
+			// Function to load external HTML into sections
+			async function loadExternalSlides() {
+				const sections = document.querySelectorAll('section[data-external]');
+				
+				await Promise.all(Array.from(sections).map(async (section) => {
+					try {
+						const response = await fetch(section.getAttribute('data-external'));
+						if (response.ok) {
+							const html = await response.text();
+							section.outerHTML = html;
+						}
+					} catch (err) {
+						console.error('Failed to load slide:', section.getAttribute('data-external'), err);
+					}
+				}));
+
+				// Initialize Reveal after all slides are loaded
+				Reveal.initialize({
+					hash: true,
+					slideNumber: 'c/t',
+					center: true,
+					transition: 'fade',
+					transitionSpeed: 'slow',
+					backgroundTransition: 'fade',
+					width: 1280,
+					height: 720,
+					margin: 0.1,
+					controls: true,
+					progress: true,
+					plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom, RevealMath.KaTeX ]
+				});
+
+				document.documentElement.style.setProperty('--r-transition-duration', '1.5s');
+
+				// Zoom functionality: Create overlay on click
+				document.addEventListener('click', (e) => {
+					// Check if clicking a zoom-image to open
+					if (e.target.classList.contains('zoom-image')) {
+						e.preventDefault();
+						e.stopPropagation();
+						
+						// Create overlay
+						const overlay = document.createElement('div');
+						overlay.className = 'zoom-overlay';
+						
+						// Clone the image
+						const img = document.createElement('img');
+						img.src = e.target.src;
+						img.alt = e.target.alt || 'Zoomed image';
+						
+						overlay.appendChild(img);
+						document.body.appendChild(overlay);
+						
+						// Close on click
+						overlay.addEventListener('click', () => {
+							overlay.remove();
+						});
+						
+						// Close on Escape key
+						const handleEscape = (evt) => {
+							if (evt.key === 'Escape') {
+								overlay.remove();
+								document.removeEventListener('keydown', handleEscape);
+							}
+						};
+						document.addEventListener('keydown', handleEscape);
+					}
+				});
+			}
+
+			loadExternalSlides();
+		</script>
+	</body>
+</html>

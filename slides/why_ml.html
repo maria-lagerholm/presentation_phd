@@ -1,0 +1,336 @@
+<!-- Vertical Stack: Why ML? -->
+<section>
+	<!-- Drill-down Slide 4: The Paradigm Shift -->
+	<section data-no-animation>
+		<div style="position: absolute; top: 20px; left: 20px; font-size: 0.4em; z-index: 20;">
+			<a href="#/why-hub" style="color: #666; text-decoration: none;">&larr; Back to main slide</a>
+		</div>
+
+		<h2 style="font-size: 1.1em; margin-bottom: 0.2em;">Why ML & Morgan Fingerprints?</h2>
+		
+		<div style="display: flex; align-items: center; justify-content: center; gap: 20px; height: 350px;">
+			<!-- Step 1: Complex Mixture -->
+			<div style="text-align: center; flex: 1;">
+				<div style="font-size: 0.5em; color: #1a3a5c; font-weight: bold; margin-bottom: 10px;">Biological Complexity</div>
+				<div style="background: rgba(26, 58, 92, 0.03); border: 2px dashed #1a3a5c; border-radius: 15px; padding: 15px; height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+					<img src="img/phytochemicals.png" style="max-height: 150px; box-shadow: none; background: transparent;">
+					<p style="font-size: 0.35em; margin-top: 10px; color: #666;">100s of compounds in synergistic mixtures</p>
+				</div>
+			</div>
+
+			<div style="font-size: 1.5em; color: #c9a227;">&rarr;</div>
+
+			<!-- Step 2: Substructure Analysis -->
+			<div style="text-align: center; flex: 1.2;">
+				<div style="font-size: 0.5em; color: #c9a227; font-weight: bold; margin-bottom: 10px;">Molecular Substructures</div>
+				<div onclick="Reveal.slide(Reveal.getIndices().h, 3)" style="background: rgba(201, 162, 39, 0.03); border: 2px solid #c9a227; border-radius: 15px; padding: 15px; height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(201,162,39,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+					<img src="img/bit_1607_Carvacrol_Artemisia_chamaemelifolia_conc_0.163.png" style="max-height: 150px; border-radius: 8px;">
+					<p style="font-size: 0.35em; margin-top: 10px; color: #666;">Decomposing molecules into interpretable motifs</p>
+					<p style="font-size: 0.3em; margin-top: 5px; color: #c9a227; font-weight: bold;">▼ Click to explore results</p>
+				</div>
+			</div>
+
+			<div style="font-size: 1.5em; color: #1a3a5c;">&rarr;</div>
+
+			<!-- Step 3: ML Patterns -->
+			<div style="text-align: center; flex: 1;">
+				<div style="font-size: 0.5em; color: #1a3a5c; font-weight: bold; margin-bottom: 10px;">Model Evaluation</div>
+				<div onclick="Reveal.slide(Reveal.getIndices().h, 2)" style="background: rgba(26, 58, 92, 0.03); border: 2px solid #1a3a5c; border-radius: 15px; padding: 15px; height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(26,58,92,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+					<img src="img/figure_5.png" style="max-height: 150px; border-radius: 8px;" alt="Bootstrapped Coefficients">
+					<p style="font-size: 0.35em; margin-top: 10px; color: #1a3a5c; font-weight: bold;">Machine Learning (SAR)</p>
+					<p style="font-size: 0.3em; margin-top: 5px; color: #1a3a5c; font-weight: bold;">▼ Click to explore evaluation</p>
+				</div>
+			</div>
+		</div>
+
+		<div style="margin-top: 30px; text-align: left; padding: 0 40px;">
+			<ul style="font-size: 0.5em; line-height: 1.5; columns: 2; -webkit-columns: 2;">
+				<li>Activity correlates with <strong>specific substructures</strong></li>
+				<li>Starting point for <strong>computational study</strong></li>
+				<li>SAR extracted using <strong>Machine Learning</strong></li>
+				<li>Patterns <strong>inaccessible</strong> to traditional screening</li>
+			</ul>
+		</div>
+
+		<aside class="notes">
+			Essential oils are not just single compounds but complex biological mixtures. 
+			Our key insight was that antimicrobial activity correlates with specific molecular substructures, not just the major components.
+			This became the starting point for our computational study.
+			By using Machine Learning, we can extract these Structure–Activity Relationships (SAR) and reveal biological patterns that are completely inaccessible to traditional reductionist screening methods.
+		</aside>
+	</section>
+
+	<!-- Drill-down Slide 5: Technical Rationale -->
+	<section data-no-animation>
+		<div style="position: absolute; top: 20px; left: 20px; font-size: 0.4em; z-index: 20;">
+			<a href="#/why-hub" style="color: #666; text-decoration: none;">&larr; Back to main slide</a>
+		</div>
+
+		<h2 style="font-size: 1.1em; margin-bottom: 0.2em;">Why ML & Morgan Fingerprints?</h2>
+		
+		<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: left; margin-top: 10px;">
+			<!-- Box 1: Why Machine Learning? -->
+			<div style="background: rgba(26, 58, 92, 0.02); padding: 12px; border-radius: 8px; border-left: 3px solid #c9a227;">
+				<h3 style="font-size: 0.55em; margin-bottom: 0.4em; color: #1a3a5c; border: none; padding: 0;">Machine Learning</h3>
+				<ul style="font-size: 0.4em; line-height: 1.25; margin-left: 1.2em;">
+					<li>Integrates <strong>heterogeneous literature data</strong></li>
+					<li>Analysis across <strong>171 samples</strong> & <strong>682 substructures</strong></li>
+					<li>Identifies recurring <strong>motifs</strong> rather than single molecules</li>
+				</ul>
+			</div>
+
+			<!-- Box 2: Why Morgan Fingerprints? -->
+			<div style="background: rgba(26, 58, 92, 0.02); padding: 12px; border-radius: 8px; border-left: 3px solid #c9a227;">
+				<h3 style="font-size: 0.55em; margin-bottom: 0.4em; color: #1a3a5c; border: none; padding: 0;">Morgan Fingerprints</h3>
+				<ul style="font-size: 0.4em; line-height: 1.25; margin-left: 1.2em;">
+					<li><strong>Decomposition:</strong> Molecules &rarr; binary vectors</li>
+					<li><strong>Radius 2:</strong> captures hydroxyl-substituted benzenes</li>
+					<li>Handles EOs as <strong>mixtures</strong> with overlapping motifs</li>
+				</ul>
+			</div>
+
+			<!-- Box 3: Why Simple Models? -->
+			<div style="background: rgba(26, 58, 92, 0.02); padding: 12px; border-radius: 8px; border-left: 3px solid #c9a227;">
+				<h3 style="font-size: 0.55em; margin-bottom: 0.4em; color: #1a3a5c; border: none; padding: 0;">L1-Regularized LogReg</h3>
+				<ul style="font-size: 0.4em; line-height: 1.25; margin-left: 1.2em;">
+					<li><strong>Embedded selection:</strong> sparsity in high-dim regime</li>
+					<li><strong>Stable & Compact:</strong> outperforms L2/Elastic Net here</li>
+					<li><strong>Rationalization:</strong> coefficients &rarr; biological insight</li>
+				</ul>
+			</div>
+
+			<!-- Box 4: Alternatives Rejected -->
+			<div style="background: rgba(177, 53, 7, 0.02); padding: 12px; border-radius: 8px; border-left: 3px solid #b13507;">
+				<h3 style="font-size: 0.55em; margin-bottom: 0.4em; color: #b13507; border: none; padding: 0;">Alternative Approaches</h3>
+				<ul style="font-size: 0.38em; line-height: 1.15; margin-left: 1.2em; color: #666;">
+					<li><strong>RF/GBM/GNN:</strong> data-hungry & black-box</li>
+					<li><strong>MACCS/Physico:</strong> too coarse for terpene diversity</li>
+					<li><strong>3D Descriptors:</strong> ill-defined for EO mixtures</li>
+					<li><strong>Docking:</strong> requires predefined protein targets</li>
+				</ul>
+			</div>
+		</div>
+
+		<aside class="notes">
+			<strong>Why machine learning was needed:</strong>
+			Essential oils are chemically complex mixtures, often containing dozens to hundreds of compounds. Traditional experimental approaches struggle to isolate and test each individual component. ML enables the integration of heterogeneous literature data and allows patterns to be extracted across 171 samples comprising 682 molecular substructures, identifying recurring structural motifs rather than focusing on single compounds. (2025_49_1_929).
+
+			<strong>Why Morgan fingerprints were chosen:</strong>
+			Morgan fingerprints encode molescules as binary vectors (ECFP) allowing decomposition into interpretable substructures. A radius of two captures chemically meaningful features like hydroxyl-substituted benzene rings while distinguishing them from inactive bicyclic hydrocarbon structures like α-pinene. They handle EOs as mixtures, capture local structural motifs without assuming a mechanism, and work reliably in small, high-dimensional datasets. Importantly, this allows overlapping substructures within the same molecule to be analysed.
+
+			<strong>Why a simple, interpretable ML model was used:</strong>
+			L1-regularised logistic regression was selected because it enforces sparsity and performs embedded feature selection, yielding a compact and stable model in a regime with far more features than samples. This choice allowed direct inspection of feature coefficients, permutation importance, and bootstrapped confidence intervals, making it possible to biologically rationalise why certain substructures were predictive. Combined with Morgan fingerprints, it allows direct mapping from model features to chemically meaningful substructures, central to the thesis aim of interpretation rather than pure prediction.
+
+			<strong>Alternative methods:</strong>
+			• Single-compound testing: impractical due to cost/scale and ignores synergistic effects.
+			• MACCS keys & physicochemical descriptors: too coarse to resolve terpene and phenolic diversity.
+			• Molecular docking: requires predefined protein targets (multi-target mechanism of EOs).
+			• Deep learning/Random Forest/GBM: data-hungry; risk of black-box behavior and overfitting.
+			• L2 regularisation: retained too many correlated features;
+			• 3D descriptors: computationally expensive and poorly defined for mixtures.
+		</aside>
+	</section>
+
+	<section id="feature-selection-slide">
+		<div style="position: absolute; top: 20px; left: 20px; font-size: 0.4em; z-index: 20;">
+			<a href="#/why-hub" style="color: #666; text-decoration: none;">&larr; Back to main slide</a>
+		</div>
+
+		<h2 style="font-size: 1.1em; margin-bottom: 0.2em; color: #1a3a5c;">Feature Selection and Model Evaluation</h2>
+		
+		<div style="display: flex; gap: 20px; align-items: stretch; max-width: 1250px; margin: 0 auto; text-align: left;">
+			
+			<div style="flex: 0.6; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 10px;">
+				<div style="width: 250px; padding: 15px 0; background: #1a3a5c; clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%); display: flex; flex-direction: column; align-items: center; color: white; text-align: center;">
+					<div style="font-size: 0.4em; font-weight: 700; text-transform: uppercase;">Raw Data</div>
+					<div style="font-size: 0.6em; font-weight: 800;">682 Descriptors</div>
+					<div style="font-size: 0.3em; opacity: 0.8;">(98% Sparse)</div>
+				</div>
+				<div style="color: #c9a227; font-size: 1em; margin: 0;">▼</div>
+				
+				<div style="width: 210px; padding: 15px 0; background: #4a6741; clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%); display: flex; flex-direction: column; align-items: center; color: white; text-align: center;">
+					<div style="font-size: 0.35em; font-weight: 700; text-transform: uppercase;">Correlation Filter</div>
+					<div style="font-size: 0.6em; font-weight: 800;">337 Descriptors</div>
+				</div>
+				<div style="color: #c9a227; font-size: 1em; margin: 0;">▼</div>
+				
+				<div style="width: 170px; padding: 15px 0; background: #b13507; clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%); display: flex; flex-direction: column; align-items: center; color: white; text-align: center;">
+					<div style="font-size: 0.35em; font-weight: 700; text-transform: uppercase;">Final Model</div>
+					<div style="font-size: 0.6em; font-weight: 800;">10 Descriptors</div>
+				</div>
+			</div>
+	
+			<div style="flex: 1.4; display: flex; flex-direction: column; gap: 15px; font-size: 0.8em;">
+				
+				<div style="background: rgba(26,58,92,0.05); padding: 12px; border-radius: 5px; border-left: 5px solid #1a3a5c; display: flex; gap: 15px; align-items: flex-start;">
+					<div style="flex: 1;">
+						<h4 style="font-size: 0.6em; color: #1a3a5c; margin: 0 0 5px 0; font-weight: 800;">1. Removing "Copycats" (Correlation)</h4>
+						<p style="font-size: 0.45em; color: #333; line-height: 1.4; margin: 0;">
+							<strong>Rule:</strong> Discard if \( |r| > 0.95 \).<br>
+							<strong>Why:</strong> Sparse + High Correlation = Unstable Model (\( VIF \approx 10.3 \)).
+						</p>
+					</div>
+				</div>
+	
+				<div style="background: rgba(74,103,65,0.05); padding: 12px; border-radius: 5px; border-left: 5px solid #4a6741; display: flex; gap: 15px; align-items: flex-start;">
+					<div style="flex: 1;">
+						<h4 style="font-size: 0.6em; color: #4a6741; margin: 0 0 5px 0; font-weight: 800;">2. Removing "Bystanders" (PFI)</h4>
+						<p style="font-size: 0.45em; color: #333; line-height: 1.4; margin: 0;">
+							<strong>Rule:</strong> Keep if AUC drops by \( \ge 0.01 \) when shuffled.<br>
+							<strong>Why:</strong> Filters out noise, keeping only genuine signals.
+						</p>
+					</div>
+					<img src="img/pfi.png" class="zoom-image" style="width: 60px; border-radius: 4px; opacity: 0.8;" >
+				</div>
+	
+				<div style="background: rgba(177, 53, 7, 0.05); padding: 12px; border-radius: 5px; border-left: 5px solid #b13507;">
+					<h4 style="font-size: 0.6em; color: #b13507; margin: 0 0 8px 0; font-weight: 800;">3. Model Evaluation (Internal Validation)</h4>
+					
+					<div style="display: flex; gap: 15px; align-items: center;">
+						<div style="flex: 1;">
+							<table style="width: 100%; font-size: 0.4em; border-collapse: collapse; text-align: center; background: white;">
+								<thead>
+									<tr style="background: #f0f0f0; border-bottom: 1px solid #ccc;">
+										<th style="padding: 4px;">Set</th>
+										<th style="padding: 4px;">Acc</th>
+										<th style="padding: 4px;">Sens</th>
+										<th style="padding: 4px;">Spec</th>
+										<th style="padding: 4px; color: #b13507; font-weight: bold;">AUC</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr style="border-bottom: 1px solid #eee;">
+										<td style="font-weight: bold; padding: 4px;">Train</td>
+										<td>0.84</td>
+										<td>0.87</td>
+										<td>0.82</td>
+										<td style="font-weight: bold; color: #b13507;">0.91</td>
+									</tr>
+									<tr>
+										<td style="font-weight: bold; padding: 4px;">Test</td>
+										<td>0.81</td>
+										<td>0.83</td>
+										<td>0.80</td>
+										<td style="font-weight: bold; color: #b13507;">0.88</td>
+									</tr>
+								</tbody>
+							</table>
+							<p style="font-size: 0.35em; margin: 8px 0 0 0; color: #444; line-height: 1.3;">
+								<strong>Gap < 3%:</strong> No signs of overfitting.<br>
+								<strong>AUC 0.88:</strong> "Excellent Discrimination."
+							</p>
+						</div>
+						
+						<div style="width: 100px; text-align: center;">
+							<img src="img/corr_matrix.png" class="zoom-image" style="width: 60px; opacity: 0.8;" > <br>
+							<img src="img/figure_3.png" class="zoom-image" style="width: 100%; cursor: zoom-in;" >
+						</div>
+					</div>
+				</div>
+				
+			</div>
+	
+			<div style="flex: 1.2; display: flex; flex-direction: column; justify-content: center; background: white; padding: 20px; border: 1px solid #eee; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+				<h4 style="font-size: 0.65em; color: #b13507; margin: 0 0 15px 0; text-align: center; font-weight: 800;">Outcome: Meaningful Predictors</h4>
+				
+				<img src="img/figure_5.png" class="zoom-image" style="width: 100%; margin-bottom: 15px;" >
+				
+				<div style="font-size: 0.45em; line-height: 1.5; color: #444;">
+					<strong>Interpretation:</strong>
+					<ul style="margin: 8px 0; padding-left: 15px;">
+						<li style="margin-bottom: 6px;"><strong>Positive (+):</strong> Hydroxyl on benzene (Bit_1607) drives potency.</li>
+						<li style="margin-bottom: 6px;"><strong>Negative (-):</strong> Branched alkyls (Bit_549) reduce potency.</li>
+						<li><strong>Robustness:</strong> Narrow CIs = Stable across 1000 bootstraps.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	
+		<aside class="notes">
+			<strong>1. The "Funnel" (Left):</strong><br>
+			We started with messy data. 682 variables, most of which were zeros (sparse).<br>
+			We filtered them down to 10 using the "Sabotage Test" and Correlation rules we just discussed.<br><br>
+	
+			<strong>2. The "Report Card" (Middle - Box 3):</strong><br>
+			Now, look at the orange box. We have to ask: "Is this model actually any good?"<br>
+			We used 5-fold cross-validation, and here are the results.<br><br>
+			
+			<strong>EXPLAINING AUC (The 0.88 Score):</strong><br>
+			You see that score <strong>AUC = 0.88</strong>?<br>
+			Think of AUC like a grade for the model:<br>
+			- <strong>0.50</strong> is a Coin Toss (Pure guessing).<br>
+			- <strong>1.00</strong> is Perfection.<br>
+			- <strong>0.80 - 0.90</strong> is considered "Excellent."<br>
+			So, at 0.88, our model is an "A-student." It is very good at distinguishing between active and inactive oils.<br><br>
+	
+			<strong>EXPLAINING THE GRAPHS (Figure 3):</strong><br>
+			If you click that small graph, you'll see the curves.<br>
+			- The <strong>Blue Curve (ROC)</strong> shows the trade-off: How many active oils do we catch (Sensitivity) vs. how many false alarms we raise (Specificity). The fact that the curve hugs the top-left corner is what gives us that high 0.88 score.<br><br>
+	
+			<strong>EXPLAINING THE TABLE (Generalisation):</strong><br>
+			Finally, look at the Table. Compare "Train" (0.84) vs "Test" (0.81).<br>
+			The gap is tiny (< 3%). This is crucial. It means the model isn't just memorizing the answers (overfitting); it actually learned the rules of chemistry.<br><br>
+	
+			<strong>3. The Outcome (Right):</strong><br>
+			Because the math is solid, we can trust the results on the right: Phenolics (Bit_1607) are the heroes, and plain terpenes (Bit_549) are just bystanders.
+		</aside>
+	</section>
+
+	<!-- Drill-down Slide 7: Molecular Substructures - Active vs Inactive -->
+	<section id="molecular-substructures-slide">
+		<div style="position: absolute; top: 20px; left: 20px; font-size: 0.4em; z-index: 20;">
+			<a href="#/why-hub" style="color: #666; text-decoration: none;">&larr; Back to main slide</a>
+		</div>
+
+		<h2 style="font-size: 1.1em; margin-bottom: 0.3em; color: #1a3a5c;">Molecular Substructures Linked to Activity</h2>
+		
+		<div style="display: flex; gap: 20px; max-width: 1100px; margin: 0 auto; text-align: left;">
+			<!-- Active Compounds -->
+			<div style="flex: 1; background: rgba(74, 103, 65, 0.03); padding: 15px; border-radius: 12px; border-left: 4px solid #4a6741;">
+				<h3 style="font-size: 0.65em; color: #4a6741; margin-bottom: 10px; border: none; padding: 0; font-weight: 800;">Positive Predictors</h3>
+				<div style="text-align: center; margin-bottom: 15px;">
+					<img src="img/active.png" alt="Active compounds" class="zoom-image" >
+				</div>
+				<div style="font-size: 0.42em; line-height: 1.5; color: #1a3a5c;">
+					<p style="margin-bottom: 8px;"><strong>Key Finding:</strong> Phenolic aromatics (Carvacrol 14.9%, Thymol 7.9%, Eugenol 12.3%) dominate. Hydroxyl-substituted benzene rings enable membrane leakage.</p>
+					<p style="margin: 0;"><strong>Synergy:</strong> Hydrocarbons like Limonene and β-caryophyllene enhance phenolic penetration.</p>
+				</div>
+			</div>
+
+			<!-- Inactive Compounds -->
+			<div style="flex: 1; background: rgba(177, 53, 7, 0.03); padding: 15px; border-radius: 12px; border-left: 4px solid #b13507;">
+				<h3 style="font-size: 0.65em; color: #b13507; margin-bottom: 10px; border: none; padding: 0; font-weight: 800;">Negative Predictors</h3>
+				<div style="text-align: center; margin-bottom: 15px;">
+					<img src="img/inactive.png" alt="Inactive compounds" class="zoom-image" >
+				</div>
+				<div style="font-size: 0.42em; line-height: 1.5; color: #1a3a5c;">
+					<p style="margin-bottom: 8px;"><strong>Key Finding:</strong> Dominated by <strong>α-pinene (15.3%)</strong>, <strong>linalool (14.8%)</strong>, <strong>limonene (11.5%)</strong>, and other non-phenolic monoterpenes.</p>
+					<p style="margin-bottom: 8px;"><strong>Bicyclic hydrocarbons</strong> and <strong>long-chain fatty acids</strong> show the strongest negative predictive weights.</p>
+					<p style="margin: 0;"><strong>Mechanistic insight:</strong> Lack of phenolic hydroxyl groups prevents effective bactericidal action.</p>
+				</div>
+			</div>
+		</div>
+
+		<div style="margin-top: 20px; background: rgba(201, 162, 39, 0.08); padding: 12px; border-radius: 8px; border-left: 4px solid #c9a227; max-width: 1100px; margin-left: auto; margin-right: auto; text-align: center;">
+			<p style="font-size: 0.45em; color: #1a3a5c; margin: 0; line-height: 1.5;">
+				<strong>Conclusion:</strong> Aromatic hydroxyl groups are identified as the strongest <strong>structural markers associated with</strong> anti-<i>Salmonella</i> activity, consistent with established theories on membrane disruption.
+			</p>
+		</div>
+
+		<p class="hint" style="font-size: 0.35em; color: #999; margin-top: 15px; text-align: center;">Click images to zoom | Click again to reset</p>
+
+		<aside class="notes">
+			Figure 4.8 shows that limonene is the most recurrent molecule at 21.1%, followed by carvacrol at 14.9%, eugenol at 12.3%, β-caryophyllene at 9.7%, linalyl acetate at 8.8%, thymol at 7.9%, and α-terpineol at 6.1%. The remaining 19.3% is a diverse "Others" category.
+
+			The dominance of phenolic aromatics is consistent with extensive evidence. Carvacrol and thymol, which differ only in hydroxyl orientation, show MICs as low as 0.5 µg/mL against <i>S.</i> Typhimurium. Eugenol's free phenolic hydroxyl group enables membrane proton leakage and ROS production.
+
+			Synergy between phenolics and terpenic hydrocarbons has been quantified in thyme + clove + cinnamon + garlic nano-emulsions, which reduced the MIC from 0.625 to 0.312 mg/mL.
+
+			On the inactive side, Figure 4.9 shows that α-pinene accounts for 15.3%, followed by linalool at 14.8%, limonene at 11.5%, geranial at 10.5%, and δ-3-carene at 7.2%. The logistic regression model ranked bicyclic hydrocarbons and long aliphatic chains as the strongest negative predictors.
+
+			Helander et al. showed that carvacrol and thymol permeabilized the outer membrane of <i>S.</i> Typhimurium at 1-3 mM, while (+)-carvone exhibited only minor effects even at 10 mM. Dorman and Deans found that thymol and carvacrol produced inhibition zones of 26-53 mm and suppressed every test strain, whereas non-phenolic alcohols like linalool generated zones one order of magnitude smaller.
+
+			This validates our logistic regression analysis where bits encoding an aromatic hydroxyl group receive the strongest positive weights, while bits representing tertiary alcohol or acetate moieties are negatively weighted.
+		</aside>
+	</section>
+</section>

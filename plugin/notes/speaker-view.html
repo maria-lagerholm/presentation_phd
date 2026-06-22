@@ -8,9 +8,15 @@
 		<title>reveal.js - Speaker View</title>
 
 		<style>
+			html {
+				color-scheme: light;
+			}
+
 			body {
-				font-family: Helvetica;
+				font-family: Helvetica, Arial, sans-serif;
 				font-size: 18px;
+				background-color: #ffffff;
+				color: #222222;
 			}
 
 			#current-slide,
@@ -92,6 +98,8 @@
 				height: 60%;
 				overflow: auto;
 				font-size: 18px;
+				background-color: #ffffff;
+				color: #222222;
 			}
 
 				.speaker-controls-time.hidden,
@@ -171,12 +179,24 @@
 
 				.speaker-controls-notes {
 					padding: 10px 16px;
+					background-color: #ffffff;
+					color: #222222;
 				}
 
 				.speaker-controls-notes .value {
 					margin-top: 5px;
-					line-height: 1.4;
+					line-height: 1.5;
 					font-size: 1.2em;
+					color: #222222;
+				}
+
+				.speaker-controls-notes .value strong {
+					color: #1a3a5c;
+				}
+
+				.speaker-controls-notes .value em,
+				.speaker-controls-notes .value i {
+					color: #333333;
 				}
 
 			/* Layout selector */

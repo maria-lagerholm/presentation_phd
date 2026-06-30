@@ -1078,3 +1078,23 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   --ty: 0;
   animation: floatIn 1.9s ease-in-out 1.7s forwards;
 }
+
+.deck-tagline {
+  position: fixed;
+  top: 18px;
+  left: 24px;
+  z-index: 30;
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 0.42em;
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(26, 58, 92, 0.72);
+  letter-spacing: 0.03em;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.deck-tagline.is-visible {
+  opacity: 1;
+}

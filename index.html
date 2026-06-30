@@ -57,12 +57,9 @@
 				<section data-external="slides/acknowledgments.html"></section>
 				<section data-external="slides/journey.html"></section>
 				<section data-external="slides/outline.html"></section>
-				<section data-external="slides/why.html"></section>
-				<section data-external="slides/why_salmonella.html"></section>
-				<section data-external="slides/why_eos.html"></section>
-				<section data-external="slides/why_ml.html"></section>
 				<section data-external="slides/conclusions.html"></section>
 			</div>
+			<div id="deck-tagline" class="deck-tagline" aria-hidden="true">Bridging phytochemistry &amp; AI</div>
 		</div>
 
 		<script src="dist/reveal.js"></script>
@@ -79,7 +76,7 @@
 				
 				await Promise.all(Array.from(sections).map(async (section) => {
 					try {
-						const response = await fetch(section.getAttribute('data-external'));
+						const response = await fetch(section.getAttribute('data-external') + '?v=' + Date.now());
 						if (response.ok) {
 							const html = await response.text();
 							section.outerHTML = html;
@@ -106,6 +103,56 @@
 				});
 
 				document.documentElement.style.setProperty('--r-transition-duration', '1.5s');
+
+				const deckTagline = document.getElementById('deck-tagline');
+				const excludedSlideSelectors = ['.title-slide', '.acknowledgments-slide', '#journey-slide', '.thank-you-slide'];
+
+				function updateDeckTagline() {
+					if (!deckTagline) return;
+					const topSlide = Reveal.getSlides()[Reveal.getState().indexh];
+					const hideTagline = topSlide && excludedSlideSelectors.some((selector) => topSlide.matches(selector));
+					deckTagline.classList.toggle('is-visible', !hideTagline);
+					deckTagline.setAttribute('aria-hidden', hideTagline ? 'true' : 'false');
+				}
+
+				Reveal.on('ready', updateDeckTagline);
+				Reveal.on('slidechanged', updateDeckTagline);
+				updateDeckTagline();
+
+				let thankYouLottie = null;
+
+				function initThankYouLottie() {
+					const container = document.getElementById('thank-you-lottie');
+					if (!container || !window.lottie || thankYouLottie) return;
+
+					thankYouLottie = lottie.loadAnimation({
+						container: container,
+						renderer: 'svg',
+						loop: true,
+						autoplay: false,
+						path: 'img/lottie/science-loop.json'
+					});
+					thankYouLottie.setSpeed(0.45);
+
+					function syncThankYouLottie() {
+						if (!thankYouLottie) return;
+						const slide = Reveal.getCurrentSlide();
+						if (slide && slide.id === 'thank-you') {
+							thankYouLottie.goToAndPlay(0, true);
+						} else {
+							thankYouLottie.pause();
+						}
+					}
+
+					Reveal.on('ready', syncThankYouLottie);
+					Reveal.on('slidechanged', syncThankYouLottie);
+					syncThankYouLottie();
+				}
+
+				const lottieScript = document.createElement('script');
+				lottieScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js';
+				lottieScript.onload = initThankYouLottie;
+				document.body.appendChild(lottieScript);
 
 				// Zoom functionality: Create overlay on click
 				document.addEventListener('click', (e) => {

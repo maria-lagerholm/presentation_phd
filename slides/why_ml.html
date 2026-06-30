@@ -248,8 +248,8 @@
 	
 		<aside class="notes">
 			<strong>1. The "Funnel" (Left):</strong><br>
-			We started with messy data. 682 variables, most of which were zeros (sparse).<br>
-			We filtered them down to 10 using the "Sabotage Test" and Correlation rules we just discussed.<br><br>
+			We started with 682 sparse Morgan fingerprint descriptors (98% zeros on average).<br>
+			We narrowed them to 10 in two steps: (1) removed one member of each highly correlated pair (Pearson |r| &gt; 0.95), reducing the set from 682 to 337; (2) ranked the remaining descriptors by permutation feature importance (100 repeats) on the L1-penalised logistic model, keeping only those whose shuffling lowered ROC AUC by at least 0.01.<br><br>
 	
 			<strong>2. The "Report Card" (Middle - Box 3):</strong><br>
 			Now, look at the orange box. We have to ask: "Is this model actually any good?"<br>
@@ -328,7 +328,7 @@
 
 			Helander et al. showed that carvacrol and thymol permeabilized the outer membrane of <i>S.</i> Typhimurium at 1-3 mM, while (+)-carvone exhibited only minor effects even at 10 mM. Dorman and Deans found that thymol and carvacrol produced inhibition zones of 26-53 mm and suppressed every test strain, whereas non-phenolic alcohols like linalool generated zones one order of magnitude smaller.
 
-			This validates our logistic regression analysis where bits encoding an aromatic hydroxyl group receive the strongest positive weights, while bits representing tertiary alcohol or acetate moieties are negatively weighted.
+			This validates our logistic regression: phenolic hydroxyl on an aromatic ring carries the strongest positive weight, while branched bicyclic hydrocarbons and tertiary alcohols are negatively weighted.
 		</aside>
 	</section>
 </section>

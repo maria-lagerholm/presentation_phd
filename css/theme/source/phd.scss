@@ -298,6 +298,25 @@ $overlayElementFgColor: 240, 240, 240;
 			}
 		}
 	}
+	}
 }
+
+.deck-tagline {
+	position: fixed;
+	top: 18px;
+	left: 24px;
+	z-index: 30;
+	font-family: 'Crimson Text', Georgia, serif;
+	font-size: 0.42em;
+	font-style: italic;
+	font-weight: 400;
+	color: rgba($academicNavy, 0.72);
+	letter-spacing: 0.03em;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.4s ease;
+
+	&.is-visible {
+		opacity: 1;
 	}
 }

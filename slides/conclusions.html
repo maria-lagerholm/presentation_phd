@@ -10,7 +10,8 @@
 	.conc-finding-card { background: rgba(74, 103, 65, 0.05); padding: 18px; border-radius: 12px; border-left: 4px solid #4a6741; }
 	.conc-ml-card { background: rgba(26, 58, 92, 0.05); padding: 18px; border-radius: 12px; border-left: 4px solid #1a3a5c; }
 	.conc-limit-card { background: rgba(177, 53, 7, 0.05); padding: 18px; border-radius: 12px; border-left: 4px solid #b13507; }
-	.conc-future-card { padding: 16px; border-radius: 12px; border-top: 3px solid #4a6741; background: linear-gradient(180deg, rgba(74,103,65,0.08) 0%, rgba(74,103,65,0.02) 100%); }
+	.conc-future-card { display: flex; flex-direction: column; padding: 20px; border-radius: 12px; border-top: 4px solid #4a6741; background: linear-gradient(180deg, rgba(74,103,65,0.08) 0%, rgba(74,103,65,0.02) 100%); }
+	.conc-future-card-blue { border-top: 4px solid #1a3a5c; background: linear-gradient(180deg, rgba(26,58,92,0.08) 0%, rgba(26,58,92,0.02) 100%); }
 	
 	/* Layout Helpers */
 	.conc-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -30,10 +31,8 @@
 	.conc-mic-box { text-align: center; padding: 10px 15px; border-radius: 8px; }
 </style>
 
-<section>
-	<!-- CONCLUSIONS OVERVIEW -->
-	<section id="conclusions-main" data-transition="fade">
-		<h2 class="conc-title">Conclusions</h2>
+<section id="conclusions-main" data-transition="fade">
+		<h2 class="conc-title">Results and Conclusions</h2>
 		
 		<div style="display: flex; justify-content: center; gap: 25px; margin-top: 30px;">
 			<div class="conc-overview-card" style="background: linear-gradient(135deg, #4a6741, #5a7751);">
@@ -61,11 +60,6 @@
 			</div>
 		</div>
 
-		<div style="margin-top: 50px; display: flex; justify-content: center; font-size: 0.45em; color: #888; gap: 10px;">
-			<span style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid #888;"></span>
-			Scroll for details
-		</div>
-
 		<aside class="notes">
 			This conclusions section summarizes the key outcomes of the doctoral research, which bridged experimental essential oil characterization with machine learning-based structure-activity analysis. The work validated that four commercial EOs meet ISO specifications, demonstrated alginate encapsulation as a viable delivery method, and identified hydroxyl-substituted benzene rings as the strongest predictors of anti-<i>Salmonella</i> activity.
 		</aside>
@@ -78,36 +72,44 @@
 			<h2 class="conc-h2">Experimental Outcomes</h2>
 			
 			<div class="conc-grid-2">
-				<div class="fragment fade-up conc-finding-card">
+				<div class="conc-finding-card">
 					<h4 class="conc-h4" style="color: #4a6741;">
 						<span class="conc-step-num" style="background: #4a6741;">1</span> GC-MS Chemotyping
 					</h4>
-					<div style="font-size: 0.48em; margin-bottom: 10px;">
-						<div style="display: flex; gap: 8px; margin-bottom: 6px;">
-							<span style="width: 70px;">Tea Tree</span>
-							<div style="flex: 1; height: 14px; background: #eee; border-radius: 3px; overflow: hidden;"><div style="width: 44.7%; height: 100%; background: #4a6741;"></div></div>
-							<span style="color: #4a6741; font-weight: 600; width: 80px;">Terpinen-4-ol</span>
+					<div style="font-size: 0.45em; margin-bottom: 10px;">
+						<div style="margin-bottom: 10px;">
+							<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+								<span style="font-weight: 600; color: #1a3a5c;">Tea Tree</span>
+								<span style="color: #4a6741; font-weight: 600; text-align: right;">Terpinen-4-ol · 45%</span>
+							</div>
+							<div style="height: 16px; background: #eee; border-radius: 3px; overflow: hidden;"><div style="width: 45%; height: 100%; background: #4a6741;"></div></div>
 						</div>
-						<div style="display: flex; gap: 8px; margin-bottom: 6px;">
-							<span style="width: 70px;">Lavender</span>
-							<div style="flex: 1; height: 14px; background: #eee; border-radius: 3px; overflow: hidden; display: flex;"><div style="width: 35.7%; background: #7b68ee;"></div><div style="width: 42.3%; background: #9370db;"></div></div>
-							<span style="color: #7b68ee; font-weight: 600; width: 80px;">Linalool pair</span>
+						<div style="margin-bottom: 10px;">
+							<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+								<span style="font-weight: 600; color: #1a3a5c;">Lavender</span>
+								<span style="color: #9370db; font-weight: 600; text-align: right;">Linalyl acetate · 42%</span>
+							</div>
+							<div style="height: 16px; background: #eee; border-radius: 3px; overflow: hidden;"><div style="width: 42%; height: 100%; background: #9370db;"></div></div>
 						</div>
-						<div style="display: flex; gap: 8px; margin-bottom: 6px;">
-							<span style="width: 70px;">Bergamot</span>
-							<div style="flex: 1; height: 14px; background: #eee; border-radius: 3px; overflow: hidden; display: flex;"><div style="width: 22.9%; background: #ffa500;"></div><div style="width: 57.5%; background: #ffcc00;"></div></div>
-							<span style="color: #ffa500; font-weight: 600; width: 80px;">Linalyl acetate</span>
+						<div style="margin-bottom: 10px;">
+							<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+								<span style="font-weight: 600; color: #1a3a5c;">Bergamot</span>
+								<span style="color: #ffa500; font-weight: 600; text-align: right;">Linalyl acetate · 58%</span>
+							</div>
+							<div style="height: 16px; background: #eee; border-radius: 3px; overflow: hidden;"><div style="width: 58%; height: 100%; background: #ffa500;"></div></div>
 						</div>
-						<div style="display: flex; gap: 8px;">
-							<span style="width: 70px;">Peppermint</span>
-							<div style="flex: 1; height: 14px; background: #eee; border-radius: 3px; overflow: hidden;"><div style="width: 49.3%; height: 100%; background: #20b2aa;"></div></div>
-							<span style="color: #20b2aa; font-weight: 600; width: 80px;">Iso-menthol</span>
+						<div>
+							<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+								<span style="font-weight: 600; color: #1a3a5c;">Peppermint</span>
+								<span style="color: #20b2aa; font-weight: 600; text-align: right;">Isomenthol · 49%</span>
+							</div>
+							<div style="height: 16px; background: #eee; border-radius: 3px; overflow: hidden;"><div style="width: 49%; height: 100%; background: #20b2aa;"></div></div>
 						</div>
 					</div>
 					<div class="conc-info-box">>98% volatiles identified • ISO compliant</div>
 				</div>
 
-				<div class="fragment fade-up conc-finding-card">
+				<div class="conc-finding-card">
 					<h4 class="conc-h4" style="color: #4a6741;">
 						<span class="conc-step-num" style="background: #4a6741;">2</span> Alginate Encapsulation
 					</h4>
@@ -129,28 +131,60 @@
 					</div>
 				</div>
 
-				<div class="fragment fade-up conc-finding-card">
+				<div class="conc-finding-card">
 					<h4 class="conc-h4" style="color: #4a6741;">
 						<span class="conc-step-num" style="background: #4a6741;">3</span> Antioxidant Capacity
 					</h4>
-					<div style="font-size: 0.48em;">
-						<div style="display: flex; gap: 8px; margin-bottom: 6px;">
-							<span class="conc-rank-badge" style="background: #20b2aa;">1st</span><span style="flex: 1;">Peppermint</span><span style="color: #20b2aa; font-weight: 600;">23.3 ± 1.0</span>
+					<div style="font-size: 0.34em;">
+						<div style="display: grid; grid-template-columns: 1fr repeat(4, 36px); gap: 2px 4px; margin-bottom: 3px; color: #666; font-weight: 600; text-align: center;">
+							<span></span>
+							<span style="grid-column: span 2;">Fresh</span>
+							<span style="grid-column: span 2;">After 12 mo</span>
 						</div>
-						<div style="display: flex; gap: 8px; margin-bottom: 6px;">
-							<span class="conc-rank-badge" style="background: #9370db;">2nd</span><span style="flex: 1;">Lavender</span><span style="color: #9370db; font-weight: 600;">18.9 ± 0.2</span>
+						<div style="display: grid; grid-template-columns: 1fr repeat(4, 36px); gap: 2px 4px; margin-bottom: 6px; color: #888; font-weight: 600; text-align: center; font-size: 0.92em;">
+							<span></span>
+							<span>DPPH</span>
+							<span>ABTS</span>
+							<span>DPPH</span>
+							<span>ABTS</span>
 						</div>
-						<div style="display: flex; gap: 8px; margin-bottom: 6px;">
-							<span class="conc-rank-badge" style="background: #ffa500;">3rd</span><span style="flex: 1;">Bergamot</span><span style="color: #ffa500; font-weight: 600;">17.0 ± 0.4</span>
+						<div style="display: grid; grid-template-columns: 1fr repeat(4, 36px); gap: 2px 4px; align-items: center; margin-bottom: 4px;">
+							<span style="font-weight: 600; color: #1a3a5c;">Tea Tree</span>
+							<span style="text-align: center; color: #4a6741; font-weight: 600;">8</span>
+							<span style="text-align: center; color: #4a6741; font-weight: 600;">169</span>
+							<span style="text-align: center; color: #4a6741; font-weight: 600;">6</span>
+							<span style="text-align: center; color: #4a6741; font-weight: 600;">120</span>
 						</div>
-						<div style="display: flex; gap: 8px;">
-							<span class="conc-rank-badge" style="background: #4a6741;">4th</span><span style="flex: 1;">Tea Tree</span><span style="color: #4a6741; font-weight: 600;">7.6 ± 1.0</span>
+						<div style="display: grid; grid-template-columns: 1fr repeat(4, 36px); gap: 2px 4px; align-items: center; margin-bottom: 4px;">
+							<span style="font-weight: 600; color: #1a3a5c;">Lavender</span>
+							<span style="text-align: center; color: #9370db; font-weight: 600;">19</span>
+							<span style="text-align: center; color: #9370db; font-weight: 600;">49</span>
+							<span style="text-align: center; color: #9370db; font-weight: 600;">12</span>
+							<span style="text-align: center; color: #9370db; font-weight: 600;">22</span>
+						</div>
+						<div style="display: grid; grid-template-columns: 1fr repeat(4, 36px); gap: 2px 4px; align-items: center; margin-bottom: 4px;">
+							<span style="font-weight: 600; color: #1a3a5c;">Bergamot</span>
+							<span style="text-align: center; color: #ffa500; font-weight: 600;">17</span>
+							<span style="text-align: center; color: #ffa500; font-weight: 600;">99</span>
+							<span style="text-align: center; color: #ffa500; font-weight: 600;">10</span>
+							<span style="text-align: center; color: #ffa500; font-weight: 600;">63</span>
+						</div>
+						<div style="display: grid; grid-template-columns: 1fr repeat(4, 36px); gap: 2px 4px; align-items: center;">
+							<span style="font-weight: 600; color: #1a3a5c;">Peppermint</span>
+							<span style="text-align: center; color: #20b2aa; font-weight: 600;">23</span>
+							<span style="text-align: center; color: #20b2aa; font-weight: 600;">191</span>
+							<span style="text-align: center; color: #20b2aa; font-weight: 600;">17</span>
+							<span style="text-align: center; color: #20b2aa; font-weight: 600;">142</span>
 						</div>
 					</div>
-					<div class="conc-info-box" style="margin-top: 10px;">Values in mmol TE/L (DPPH assay) • Stable after 12 months</div>
+					<div style="font-size: 0.36em; color: #1a3a5c; background: rgba(74,103,65,0.06); padding: 8px 10px; border-radius: 6px; margin-top: 10px; line-height: 1.45;">
+						Peppermint is the strongest antioxidant overall (highest on DPPH and ABTS). All oils ↓ after 12 months.
+					</div>
+					<div class="conc-info-box" style="margin-top: 8px;">mmol TE/L* (Kokina et al., 2019, Table 2)</div>
+					<p style="font-size: 0.32em; color: #888; margin: 6px 0 0 0; line-height: 1.4;">*Each sample is calibrated against Trolox, a synthetic reference antioxidant (vitamin E analog), so DPPH and ABTS results share one comparable scale.</p>
 				</div>
 
-				<div class="fragment fade-up conc-finding-card">
+				<div class="conc-finding-card">
 					<h4 class="conc-h4" style="color: #4a6741;">
 						<span class="conc-step-num" style="background: #4a6741;">4</span> Antimicrobial Activity
 					</h4>
@@ -171,9 +205,9 @@
 		</div>
 
 		<aside class="notes">
-			<strong>GC-MS Chemotyping:</strong> All four oils matched expected chemotypes with >98% identified volatiles. Tea tree showed classic terpinen-4-ol dominance (44.7%), lavender and bergamot shared linalool/linalyl-acetate profiles but differed quantitatively, and peppermint displayed high iso-menthol (49.3%).<br><br>
+			<strong>GC-MS Chemotyping:</strong> All four oils matched expected chemotypes with >98% identified volatiles. Tea tree was dominated by terpinen-4-ol (45%), lavender by linalyl acetate (42%) with linalool (36%), bergamot by linalyl acetate (58%) with linalool (23%), and peppermint by isomenthol (49%).<br><br>
 			<strong>Encapsulation:</strong> Electrostatic extrusion into calcium-alginate matrices preserved bead integrity post-freeze-drying. Blank beads averaged 2.0mm wet, shrinking ~30% to 1.4mm dry. Oil-loaded beads showed k=0.33-0.40 shrinkage while maintaining sphericity.<br><br>
-			<strong>Antioxidant:</strong> Peppermint was the top performer (23.3 mmol TE/L DPPH), followed by lavender/bergamot, with tea tree lowest (7.6 mmol TE/L). Activity remained stable after 12 months storage.<br><br>
+			<strong>Antioxidant:</strong> Peppermint is the strongest overall (top on DPPH and ABTS, fresh and after 12 months). All oils declined on storage.<br><br>
 			<strong>Antimicrobial:</strong> Lavender and bergamot inhibited <i>S.</i> Typhimurium at 5 µg/mL; tea tree and peppermint required 10 µg/mL. The linalool/linalyl-acetate chemotype showed superior Gram-negative penetration.
 		</aside>
 	</section>
@@ -186,30 +220,45 @@
 
 			<div style="display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 25px;">
 				<div>
-					<div class="fragment fade-up conc-ml-card" style="margin-bottom: 20px;">
+					<div class="conc-ml-card" style="margin-bottom: 20px;">
 						<h4 class="conc-h4" style="color: #1a3a5c;">Model Performance</h4>
-						<div class="conc-flex-center" style="gap: 20px;">
+						<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;">
 							<div style="text-align: center;">
-								<div style="width: 70px; height: 70px; border-radius: 50%; background: conic-gradient(#4a6741 81%, #eee 0%); display: flex; align-items: center; justify-content: center; margin-bottom: 8px; background-color: #fff; padding: 10px;">
-									<div style="width: 50px; height: 50px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 0.7em; font-weight: 700; color: #4a6741; box-shadow: inset 0 0 10px rgba(0,0,0,0.1);">81%</div>
+								<div style="width: 65px; height: 65px; border-radius: 50%; background: conic-gradient(#4a6741 81%, #eee 0%); display: flex; align-items: center; justify-content: center; margin-bottom: 6px; background-color: #fff; padding: 8px;">
+									<div style="width: 46px; height: 46px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 0.65em; font-weight: 700; color: #4a6741; box-shadow: inset 0 0 10px rgba(0,0,0,0.1);">81%</div>
 								</div>
-								<span style="font-size: 0.45em;">Accuracy</span>
+								<span style="font-size: 0.42em;">Accuracy</span>
 							</div>
 							<div style="text-align: center;">
-								<div style="width: 70px; height: 70px; border-radius: 50%; background: conic-gradient(#1a3a5c 88%, #eee 0%); display: flex; align-items: center; justify-content: center; margin-bottom: 8px; background-color: #fff; padding: 10px;">
-									<div style="width: 50px; height: 50px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 0.7em; font-weight: 700; color: #1a3a5c; box-shadow: inset 0 0 10px rgba(0,0,0,0.1);">0.88</div>
+								<div style="width: 65px; height: 65px; border-radius: 50%; background: conic-gradient(#1a3a5c 88%, #eee 0%); display: flex; align-items: center; justify-content: center; margin-bottom: 6px; background-color: #fff; padding: 8px;">
+									<div style="width: 46px; height: 46px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 0.65em; font-weight: 700; color: #1a3a5c; box-shadow: inset 0 0 10px rgba(0,0,0,0.1);">0.88</div>
 								</div>
-								<span style="font-size: 0.45em;">ROC AUC</span>
+								<span style="font-size: 0.42em;">ROC AUC</span>
 							</div>
-							<div style="font-size: 0.45em; color: #555; padding-top: 15px;">
-								<div style="margin-bottom: 5px;"><strong>171</strong> EO profiles</div>
-								<div style="margin-bottom: 5px;"><strong>682</strong> bits</div>
-								<div><strong>10</strong> features</div>
+							<div style="text-align: center;">
+								<div style="width: 65px; height: 65px; border-radius: 50%; background: conic-gradient(#4a6741 83%, #eee 0%); display: flex; align-items: center; justify-content: center; margin-bottom: 6px; background-color: #fff; padding: 8px;">
+									<div style="width: 46px; height: 46px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 0.65em; font-weight: 700; color: #4a6741; box-shadow: inset 0 0 10px rgba(0,0,0,0.1);">0.83</div>
+								</div>
+								<span style="font-size: 0.42em;">Sensitivity</span>
+							</div>
+							<div style="text-align: center;">
+								<div style="width: 65px; height: 65px; border-radius: 50%; background: conic-gradient(#1a3a5c 80%, #eee 0%); display: flex; align-items: center; justify-content: center; margin-bottom: 6px; background-color: #fff; padding: 8px;">
+									<div style="width: 46px; height: 46px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 0.65em; font-weight: 700; color: #1a3a5c; box-shadow: inset 0 0 10px rgba(0,0,0,0.1);">0.80</div>
+								</div>
+								<span style="font-size: 0.42em;">Specificity</span>
+							</div>
+							<div style="text-align: center;">
+								<div style="width: 65px; height: 65px; border-radius: 50%; background: conic-gradient(#c9a227 82%, #eee 0%); display: flex; align-items: center; justify-content: center; margin-bottom: 6px; background-color: #fff; padding: 8px;">
+									<div style="width: 46px; height: 46px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 0.65em; font-weight: 700; color: #c9a227; box-shadow: inset 0 0 10px rgba(0,0,0,0.1);">0.82</div>
+								</div>
+								<span style="font-size: 0.42em;">F1 score</span>
 							</div>
 						</div>
+						<div class="conc-info-box" style="margin-top: 10px;">Cross-validated test metrics* (Table 4.8)</div>
+						<p style="font-size: 0.32em; color: #888; margin: 6px 0 0 0; line-height: 1.45;">*The model predicts anti-<i>Salmonella</i> activity from molecular fingerprint features. <strong>Accuracy</strong> — share of oils classified correctly. <strong>Sensitivity</strong> — active oils correctly identified. <strong>Specificity</strong> — inactive oils correctly rejected. <strong>F1</strong> — balance between finding active oils and avoiding false positives. <strong>ROC AUC</strong> — ability to rank active oils above inactive ones.</p>
 					</div>
 
-					<div class="fragment fade-up" style="background: linear-gradient(135deg, rgba(201,162,39,0.1), rgba(201,162,39,0.05)); padding: 20px; border-radius: 12px; border: 2px solid #c9a227;">
+					<div style="background: linear-gradient(135deg, rgba(201,162,39,0.1), rgba(201,162,39,0.05)); padding: 20px; border-radius: 12px; border: 2px solid #c9a227;">
 						<h4 class="conc-h4" style="color: #c9a227;"><span style="font-size: 1.2em;">★</span> Key Discovery</h4>
 						<div class="conc-flex-center" style="gap: 20px; justify-content: flex-start;">
 							<div style="text-align: center;">
@@ -239,7 +288,7 @@
 					</div>
 				</div>
 
-				<div class="fragment fade-up conc-ml-card">
+				<div class="conc-ml-card">
 					<h4 class="conc-h4" style="color: #1a3a5c; justify-content: center;">Predictive Substructures</h4>
 					<div style="font-size: 0.45em;">
 						<div style="margin-bottom: 12px;">
@@ -258,148 +307,122 @@
 							</div>
 						</div>
 					</div>
-					<div style="margin-top: 15px; padding-top: 12px; border-top: 1px dashed rgba(26,58,92,0.2); font-size: 0.42em; color: #666; font-style: italic; text-align: center;">
-						"Bridging phytochemistry & ML"
+					<div style="margin-top: 15px; padding-top: 12px; border-top: 1px dashed rgba(26,58,92,0.2);">
+						<div style="display: flex; flex-direction: column; gap: 8px; align-items: stretch;">
+							<div style="font-size: 0.68em; background: rgba(26,58,92,0.12); padding: 6px 8px; border-radius: 4px; border-left: 3px solid #1a3a5c; text-align: left;">
+								<div style="font-weight: 700; color: #1a3a5c; margin-bottom: 3px;">Carvacrol / Thymol</div>
+								<div style="color: #444; line-height: 1.35;">Protonophoric H⁺ leakage (outer membrane)</div>
+							</div>
+							<div style="font-size: 0.68em; background: rgba(177,53,7,0.1); padding: 6px 8px; border-radius: 4px; border-left: 3px solid #b13507; text-align: left;">
+								<div style="font-weight: 700; color: #b13507; margin-bottom: 3px;">Eugenol</div>
+								<div style="color: #444; line-height: 1.35;">Oxidative stress via reactive oxygen species</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
 		<aside class="notes">
-			<strong>Model Details:</strong> L1-regularised logistic regression (C=1.75) trained on 171 EO profiles encoded as 2048-bit Morgan fingerprints, reduced to 682 significant bits. Achieved 81% cross-validated accuracy and 0.88 ROC AUC.<br><br>
-			<strong>Key Finding:</strong> Only 10 fingerprint bits passed the permutation-importance threshold. The hydroxylated aromatic fragment alone elevated predicted anti-<i>Salmonella</i> activity probability from ~45% to ~95%.<br><br>
+			<strong>Model Details:</strong> L1-regularised logistic regression (C=1.75), 5×100-fold stratified cross-validation. Cross-validated test metrics (Table 4.8): accuracy 0.81, sensitivity 0.83, specificity 0.80, F1 0.82, MCC 0.63, ROC AUC 0.88.<br><br>
+			<strong>Key Finding:</strong> Phenolic -OH on aromatic rings is the strongest predictor (~45% → ~95% activity probability). Carvacrol and thymol (p-cymene phenols) enable protonophoric H⁺ leakage across the outer membrane of <i>S.</i> Typhimurium (Helander et al., 1998; Gören et al., 2004; Peñalver et al., 2005). Eugenol kills via oxidative stress from reactive oxygen species (Aljuwayd et al., 2024).<br><br>
 			<strong>Positive predictors:</strong> Phenolic -OH on aromatic rings, acetate esters, furan heterocycles, cycloalkene motifs.<br>
 			<strong>Negative predictors:</strong> Branched bicyclic hydrocarbons, tertiary alcohols, long aliphatic chains.<br><br>
 			This explains the order-of-magnitude potency gap between phenolic-rich oregano/thyme oils and the linalyl-acetate-dominated lavender/bergamot examined here.
 		</aside>
 	</section>
 
-	<!-- LIMITATIONS -->
+<!-- LIMITATIONS -->
 	<section id="limitations">
 		<div class="conc-section-container">
 			<div class="conc-label" style="color: #b13507;">Limitations</div>
 			<h2 class="conc-h2">Scope & Constraints</h2>
 
 			<div class="conc-grid-2">
-				<div class="fragment fade-up conc-limit-card">
+				<div class="conc-limit-card">
 					<h4 class="conc-h4" style="color: #b13507;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v8L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45L14 10V2"/><path d="M8.5 2h7"/></svg> Experimental Phase</h4>
 					<ul class="conc-list">
-						<li>Only <strong>4 commercial oils</strong></li>
-						<li>Encapsulation: no release kinetics</li>
-						<li>Antioxidants: missing FRAP, ORAC</li>
-						<li>Single <i>S.</i> Typhimurium strain</li>
+						<li>Only <strong>4 commercial oils</strong> — no chemotypic or batch-to-batch coverage</li>
+						<li>Encapsulation: morphology only; no release kinetics, volatile retention, biological activity, or food matrix testing</li>
+						<li>Antioxidants: DPPH &amp; ABTS only; missing FRAP, ORAC, CUPRAC, TEAC</li>
+						<li>Single strain <i>S.</i> Typhimurium ATCC 14028; one culture protocol</li>
+						<li>Other pathogens, clinical isolates &amp; complex food matrices not tested</li>
 					</ul>
 				</div>
 
-				<div class="fragment fade-up conc-limit-card">
+				<div class="conc-limit-card">
 					<h4 class="conc-h4" style="color: #b13507;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/><path d="M12 8V4H8"/></svg> Computational Phase</h4>
 					<ul class="conc-list">
-						<li>Heterogeneous MIC protocols</li>
-						<li>Trace compounds ignored</li>
-						<li>Morgan FPs: no stereochemistry</li>
-						<li><strong>No external validation</strong></li>
+						<li>Heterogeneous MIC protocols (media, inocula, strains)</li>
+						<li>Trace compounds ignored (only constituents &gt;10%)</li>
+						<li>Morgan FPs: no stereochemistry; hash collisions blur attribution</li>
+						<li>Assumes <strong>linear additive effects</strong>; binary classification only</li>
+						<li><strong>Internal cross-validation only</strong> — no external holdout set</li>
+						<li>Small sample (171) vs 682 features risks optimistic metrics</li>
+						<li>Highlighted substructures not mechanistically confirmed in lab</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<aside class="notes">
+			<strong>Experimental Limitations:</strong> • Only 4 commercial EOs — limited chemotypic and batch variation • Encapsulation: morphology only; no release kinetics, volatile retention, biological activity, or food matrix • Antioxidants: DPPH &amp; ABTS only; missing FRAP, ORAC, CUPRAC, TEAC • Single <i>S.</i> Typhimurium ATCC 14028 strain; one protocol • Other pathogens, clinical isolates and food matrices not tested.<br>
+			<strong>Computational Limitations:</strong> • Heterogeneous MIC protocols from literature (media, inocula, strains) • Trace compounds ignored (&gt;10% threshold only) • Morgan FPs lack stereochemistry; hash collisions • Linear additive assumption; binary labels only • Internal CV only, no external holdout • n=171 vs 682 features • Substructure–activity links not mechanistically confirmed in lab.
+		</aside>
+</section>
+
+	<!-- FUTURE DIRECTIONS -->
+	<section id="future-directions" data-no-animation>
+		<div class="conc-section-container">
+			<div class="conc-label" style="color: #1a3a5c;">Future Directions</div>
+			<h2 class="conc-h2" style="margin-bottom: 16px;">The Research Horizon</h2>
+
+			<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+				<div style="padding: 14px 16px; border-radius: 12px; border-top: 4px solid #4a6741; background: linear-gradient(180deg, rgba(74,103,65,0.08) 0%, rgba(74,103,65,0.02) 100%);">
+					<h4 style="color: #4a6741; font-size: 0.66em; margin: 0 0 8px 0; padding: 0;">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a6741" stroke-width="2" style="vertical-align: middle; margin-right: 6px; margin-top: -2px;"><path d="M10 2v8L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45L14 10V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
+						Experimental Expansion
+					</h4>
+					<ul style="font-size: 0.46em; padding-left: 16px; color: #444; line-height: 1.45; margin: 0;">
+						<li style="margin-bottom: 5px;"><strong>Profiling:</strong> more oils</li>
+						<li style="margin-bottom: 5px;"><strong>Antioxidants:</strong> more assays</li>
+						<li style="margin-bottom: 5px;"><strong>Encapsulation:</strong> try multiple carriers, do bioactivity tests, test in real foods, etc.</li>
+						<li style="margin-bottom: 5px;"><strong>Bioactivity:</strong> more pathogens, test on biofilms; mechanism of action, multi-omics</li>
 					</ul>
 				</div>
 
-				<div class="fragment fade-up conc-limit-card" style="grid-column: span 2;">
-					<h4 class="conc-h4" style="color: #b13507;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg> Model & Validation Gaps</h4>
-					<div style="display: flex; gap: 25px; font-size: 0.48em; color: #444;">
-						<div style="flex: 1;">
-							<p>• Assumes <strong>linear additive effects</strong></p>
-							<p>• Small sample (171) risks optimism</p>
-						</div>
-						<div style="flex: 1;">
-							<p>• No mechanistic wet-lab confirmation</p>
-							<p>• Correlations require <strong>causal validation</strong></p>
-						</div>
-					</div>
+				<div style="padding: 14px 16px; border-radius: 12px; border-top: 4px solid #1a3a5c; background: linear-gradient(180deg, rgba(26,58,92,0.08) 0%, rgba(26,58,92,0.02) 100%);">
+					<h4 style="color: #1a3a5c; font-size: 0.66em; margin: 0 0 8px 0; padding: 0;">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a3a5c" stroke-width="2" style="vertical-align: middle; margin-right: 6px; margin-top: -2px;"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+						Computational &amp; AI
+					</h4>
+					<ul style="font-size: 0.46em; padding-left: 16px; color: #444; line-height: 1.45; margin: 0;">
+						<li style="margin-bottom: 5px;">Graph neural networks on molecular graphs</li>
+						<li style="margin-bottom: 5px;">Transformer molecular language models (stereochemistry-aware)</li>
+						<li style="margin-bottom: 5px;">Active-learning loops: predict → wet-lab → retrain</li>
+						<li style="margin-bottom: 5px;"><strong>ChemBERTa:</strong> pretrained on SMILES, further fine-tuned on the small EO dataset</li>
+						<li style="margin-bottom: 5px;"><strong>AI research agents:</strong> autonomously mine literature to expand MIC datasets</li>
+					</ul>
 				</div>
 			</div>
 		</div>
 
 		<aside class="notes">
-			<strong>Experimental Limitations:</strong> • Only 4 commercial EOs • Encapsulation: no release kinetics • Antioxidant: missing FRAP, ORAC • Antimicrobial: single strain.
-			<strong>Computational Limitations:</strong> • MIC heterogeneity • Trace compounds ignored • No stereochemistry • No external validation.
+			<strong>Future Directions (from the thesis):</strong><br>
+			<strong>Experimental:</strong> Expand beyond four commercial oils across chemotypes, seasons and processing; GC-HRMS, 2D-GC and untargeted LC-MS for trace synergists with reference libraries. Full antioxidant redox panel (FRAP, CUPRAC, ORAC, TEAC) plus liposome ROS / lipid-peroxidation models. Encapsulation: composite carriers (alginate-chitosan, whey-alginate, Pickering), process intensification (multi-nozzle, spinning-disk, continuous freeze-drying), in-line NIR/Raman, and release/stability/aroma in real food matrices. Broader antimicrobial testing: pathogens, clinical isolates, biofilms; vary pH, salt, fat; time-kill, membrane integrity and multi-omics; synergy with conventional preservatives.<br>
+			<strong>Computational &amp; AI:</strong> GNNs on molecular graphs; transformer molecular language models; active-learning loops; ChemBERTa fine-tuned on the EO dataset; AI research agents to expand MIC datasets from literature.<br>
 		</aside>
 	</section>
 
-	<!-- FUTURE DIRECTIONS -->
-	<section id="future-directions">
-		<div class="conc-section-container">
-			<div class="conc-label" style="color: #1a3a5c;">Future Directions</div>
-			<h2 class="conc-h2">The Research Horizon</h2>
-
-			<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
-				<div class="fragment fade-up conc-future-card">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4a6741" stroke-width="2"><path d="M12 2L7 7l5 5 5-5-5-5z"/><path d="M7 7l-5 5 5 5 5-5-5-5z"/><path d="M17 7l-5 5 5 5 5-5-5-5z"/><path d="M12 12l-5 5 5 5 5-5-5-5z"/></svg>
-					<h4 style="color: #4a6741; font-size: 0.65em; margin: 8px 0;">Expanded Profiling</h4>
-					<ul class="conc-list" style="font-size: 0.42em; padding-left: 14px;"><li>GC-HRMS, 2D-GC, LC-MS</li><li>Seasonality & chemotypes</li></ul>
-				</div>
-				<div class="fragment fade-up conc-future-card">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4a6741" stroke-width="2"><path d="M10 2v8L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45L14 10V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
-					<h4 style="color: #4a6741; font-size: 0.65em; margin: 8px 0;">Enhanced Bioassays</h4>
-					<ul class="conc-list" style="font-size: 0.42em; padding-left: 14px;"><li>Multiple pathogens & biofilms</li><li>Time-kill curves</li></ul>
-				</div>
-				<div class="fragment fade-up conc-future-card">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4a6741" stroke-width="2"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
-					<h4 style="color: #4a6741; font-size: 0.65em; margin: 8px 0;">Scale-up</h4>
-					<ul class="conc-list" style="font-size: 0.42em; padding-left: 14px;"><li>Multi-layer carriers</li><li>Release in food matrices</li></ul>
-				</div>
-				<div class="fragment fade-up conc-future-card" style="border-top-color: #1a3a5c; background: linear-gradient(180deg, rgba(26,58,92,0.08) 0%, rgba(26,58,92,0.02) 100%);">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a3a5c" stroke-width="2"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
-					<h4 style="color: #1a3a5c; font-size: 0.65em; margin: 8px 0;">Advanced ML</h4>
-					<ul class="conc-list" style="font-size: 0.42em; padding-left: 14px;"><li>Graph Neural Networks</li><li>Active learning loops</li></ul>
-				</div>
-				<div class="fragment fade-up conc-future-card" style="border-top-color: #1a3a5c; background: linear-gradient(180deg, rgba(26,58,92,0.08) 0%, rgba(26,58,92,0.02) 100%);">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a3a5c" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11"/></svg>
-					<h4 style="color: #1a3a5c; font-size: 0.65em; margin: 8px 0;">Validation</h4>
-					<ul class="conc-list" style="font-size: 0.42em; padding-left: 14px;"><li>Independent test cohorts</li><li>TRIPOD guidelines</li></ul>
-				</div>
-				<div class="fragment fade-up conc-future-card" style="border-top-color: #1a3a5c; background: linear-gradient(180deg, rgba(26,58,92,0.08) 0%, rgba(26,58,92,0.02) 100%);">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a3a5c" stroke-width="2"><path d="M3 21h18"/><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7"/><path d="M12 22V7"/><path d="M2 7h20"/><path d="m10 7-5 5"/><path d="m19 7-5 5"/></svg>
-					<h4 style="color: #1a3a5c; font-size: 0.65em; margin: 8px 0;">Translation</h4>
-					<ul class="conc-list" style="font-size: 0.42em; padding-left: 14px;"><li>Sensory acceptability</li><li>Regulatory toxicology</li></ul>
-				</div>
-			</div>
-
-			<div class="fragment fade-up" style="margin-top: 18px; padding: 15px; background: #fffef5; border-radius: 10px; border: 1px solid #c9a227; display: flex; align-items: center; gap: 15px;">
-				<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7Z"/></svg>
-				<div style="font-size: 0.5em; color: #1a3a5c;">
-					<strong style="color: #c9a227;">Next:</strong> Extend to <strong>Graph Neural Networks</strong> for virtual screening <i>in silico</i> before wet-lab validation.
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- FINAL TAKEAWAY -->
-	<section id="conclusions-final">
-		<div style="text-align: center; max-width: 900px; margin: 0 auto;">
-			<h2 class="conc-title">Key Takeaways</h2>
-			<div class="conc-flex-center" style="gap: 30px; margin-bottom: 40px; align-items: flex-start;">
-				<div class="fragment fade-up" style="flex: 1; max-width: 250px;">
-					<div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #4a6741, #5a7751); margin: 0 auto 15px; display: flex; align-items: center; justify-content: center;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M10 2v8L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45L14 10V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></div>
-					<h4 style="color: #4a6741; font-size: 0.8em; margin-bottom: 8px;">Experimental</h4>
-					<p style="font-size: 0.5em; color: #555;">4 EOs characterized, encapsulated, and validated</p>
-				</div>
-				<div class="fragment fade-up" style="flex: 1; max-width: 250px;">
-					<div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #1a3a5c, #2a4a6c); margin: 0 auto 15px; display: flex; align-items: center; justify-content: center;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
-					<h4 style="color: #1a3a5c; font-size: 0.8em; margin-bottom: 8px;">Computational</h4>
-					<div style="font-size: 0.42em; color: #555; text-align: left;">• Unified SAR workflow<br>• Archival data mining<br>• Local flora importance</div>
-				</div>
-				<div class="fragment fade-up" style="flex: 1; max-width: 250px;">
-					<div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #c9a227, #d9b237); margin: 0 auto 15px; display: flex; align-items: center; justify-content: center;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
-					<h4 style="color: #c9a227; font-size: 0.8em; margin-bottom: 8px;">Integration</h4>
-					<p style="font-size: 0.5em; color: #555;">Bridging wet-lab & ML for accelerated discovery</p>
-				</div>
-			</div>
-			<div class="fragment fade-up" style="background: rgba(0,0,0,0.03); padding: 25px; border-radius: 15px; border-left: 4px solid #c9a227;">
-				<p style="font-size: 0.65em; color: #1a3a5c; font-style: italic;">"Our approach illustrates the promise of <strong style="color: #4a6741;">computational phytochemistry</strong> for future breakthroughs."</p>
-			</div>
+	<!-- THANK YOU -->
+	<section id="thank-you" class="thank-you-slide" data-no-animation>
+		<div style="text-align: center; max-width: 900px; margin: 0 auto; padding-top: 50px;">
+			<div id="thank-you-lottie" aria-hidden="true" style="width: 320px; height: 240px; margin: 0 auto 28px auto;"></div>
+			<h2 style="font-family: 'Crimson Text', serif; color: #1a3a5c; font-size: 2.2em; border: none; padding: 0; margin: 0;">Thank you</h2>
 		</div>
 
 		<aside class="notes">
-			<strong>Final Summary:</strong> Lightweight ML pipelines bridge compositional analytics and biological performance. Key finding: phenolic -OH is the strongest predictor of anti-<i>Salmonella</i> activity.
+			Thank the committee and audience. Invite questions.
 		</aside>
 	</section>
-</section>
 

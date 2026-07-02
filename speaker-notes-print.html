@@ -64,7 +64,7 @@
 
 <div class="page">
   <div class="header">
-    <span class="num">Slide 1 of 18</span>
+    <span class="num">Slide 1 of 16</span>
     <h1>Title</h1>
   </div>
   <div class="notes">Welcome to the doctoral defense presentation on &quot;Chemical characterisation of essential oils and machine learning analysis of molecular substructures associated with antimicrobial activity against Salmonella Typhimurium for food industry applications.&quot;<br>
@@ -73,7 +73,7 @@
 </div>
 <div class="page">
   <div class="header">
-    <span class="num">Slide 2 of 18</span>
+    <span class="num">Slide 2 of 16</span>
     <h1>Acknowledgments</h1>
   </div>
   <div class="notes">I would like to express my sincere gratitude to all collaborators who contributed to this research.<br>
@@ -88,21 +88,21 @@
 </div>
 <div class="page">
   <div class="header">
-    <span class="num">Slide 3 of 18</span>
+    <span class="num">Slide 3 of 16</span>
     <h1>Research Roadmap</h1>
   </div>
   <div class="notes"><em>No speaker notes for this slide.</em></div>
 </div>
 <div class="page">
   <div class="header">
-    <span class="num">Slide 4 of 18</span>
-    <h1>Experimental Foundation</h1>
+    <span class="num">Slide 4 of 16</span>
+    <h1>Lab Experiments</h1>
   </div>
   <div class="notes"><em>No speaker notes for this slide.</em></div>
 </div>
 <div class="page">
   <div class="header">
-    <span class="num">Slide 5 of 18</span>
+    <span class="num">Slide 5 of 16</span>
     <h1>Machine Learning</h1>
   </div>
   <div class="notes">Phase I: Experimental Results &amp; Discussion<br>
@@ -133,7 +133,22 @@
 </div>
 <div class="page">
   <div class="header">
-    <span class="num">Slide 6 of 18</span>
+    <span class="num">Slide 6 of 16</span>
+    <h1>Machine Learning Insights</h1>
+  </div>
+  <div class="notes">Model Details: L1-regularised logistic regression (C=1.75) trained on 171 EO profiles encoded as 2048-bit Morgan fingerprints, reduced to 682 significant bits. Achieved 81% cross-validated accuracy and 0.88 ROC AUC.<br>
+<br>
+			Key Finding: Only 10 fingerprint bits passed the permutation-importance threshold. The hydroxylated aromatic fragment alone elevated predicted anti-Salmonella activity probability from ~45% to ~95%.<br>
+<br>
+			Positive predictors: Phenolic -OH on aromatic rings, acetate esters, furan heterocycles, cycloalkene motifs.<br>
+<br>
+			Negative predictors: Branched bicyclic hydrocarbons, tertiary alcohols, long aliphatic chains.<br>
+<br>
+			This explains the order-of-magnitude potency gap between phenolic-rich oregano/thyme oils and the linalyl-acetate-dominated lavender/bergamot examined here.</div>
+</div>
+<div class="page">
+  <div class="header">
+    <span class="num">Slide 7 of 16</span>
     <h1>Why?</h1>
   </div>
   <div class="notes">This slide introduces the three main research questions driving this doctoral work:<br>
@@ -148,7 +163,7 @@
 </div>
 <div class="page">
   <div class="header">
-    <span class="num">Slide 7 of 18</span>
+    <span class="num">Slide 8 of 16</span>
     <h1>Why studying Salmonella?</h1>
   </div>
   <div class="notes">Antibiotics are routinely added to animal feed and water on farms, both to promote growth and prevent disease in livestock. This agricultural use creates an environment where bacteria including Salmonella Typhimurium are exposed to low antibiotic levels, encouraging resistance to develop. Resistant strains then enter the food chain and cause hard-to-treat infections in people.<br>
@@ -157,7 +172,7 @@
 </div>
 <div class="page">
   <div class="header">
-    <span class="num">Slide 8 of 18</span>
+    <span class="num">Slide 9 of 16</span>
     <h1>Why essential oils?</h1>
   </div>
   <div class="notes">Why essential oils as antimicrobials?<br>
@@ -178,7 +193,7 @@
 </div>
 <div class="page">
   <div class="header">
-    <span class="num">Slide 9 of 18</span>
+    <span class="num">Slide 10 of 16</span>
     <h1>Why ML &amp; Morgan Fingerprints?</h1>
   </div>
   <div class="notes">Essential oils are not just single compounds but complex biological mixtures.<br>
@@ -188,7 +203,7 @@
 </div>
 <div class="page">
   <div class="header">
-    <span class="num">Slide 10 of 18</span>
+    <span class="num">Slide 11 of 16</span>
     <h1>Why ML &amp; Morgan Fingerprints?</h1>
   </div>
   <div class="notes">Why machine learning was needed:<br>
@@ -210,7 +225,7 @@
 </div>
 <div class="page">
   <div class="header">
-    <span class="num">Slide 11 of 18</span>
+    <span class="num">Slide 12 of 16</span>
     <h1>Feature Selection and Model Evaluation</h1>
   </div>
   <div class="notes">1. The &quot;Funnel&quot; (Left):<br>
@@ -255,7 +270,7 @@
 </div>
 <div class="page">
   <div class="header">
-    <span class="num">Slide 12 of 18</span>
+    <span class="num">Slide 13 of 16</span>
     <h1>Molecular Substructures Linked to Activity</h1>
   </div>
   <div class="notes">Figure 4.8 shows that limonene is the most recurrent molecule at 21.1%, followed by carvacrol at 14.9%, eugenol at 12.3%, β-caryophyllene at 9.7%, linalyl acetate at 8.8%, thymol at 7.9%, and α-terpineol at 6.1%. The remaining 19.3% is a diverse &quot;Others&quot; category.<br>
@@ -272,57 +287,22 @@
 </div>
 <div class="page">
   <div class="header">
-    <span class="num">Slide 13 of 18</span>
-    <h1>Conclusions</h1>
-  </div>
-  <div class="notes">This conclusions section summarizes the key outcomes of the doctoral research, which bridged experimental essential oil characterization with machine learning-based structure-activity analysis. The work validated that four commercial EOs meet ISO specifications, demonstrated alginate encapsulation as a viable delivery method, and identified hydroxyl-substituted benzene rings as the strongest predictors of anti-Salmonella activity.</div>
-</div>
-<div class="page">
-  <div class="header">
-    <span class="num">Slide 14 of 18</span>
-    <h1>Experimental Outcomes</h1>
-  </div>
-  <div class="notes">GC-MS Chemotyping: All four oils matched expected chemotypes with &gt;98% identified volatiles. Tea tree showed classic terpinen-4-ol dominance (44.7%), lavender and bergamot shared linalool/linalyl-acetate profiles but differed quantitatively, and peppermint displayed high iso-menthol (49.3%).<br>
-<br>
-			Encapsulation: Electrostatic extrusion into calcium-alginate matrices preserved bead integrity post-freeze-drying. Blank beads averaged 2.0mm wet, shrinking ~30% to 1.4mm dry. Oil-loaded beads showed k=0.33-0.40 shrinkage while maintaining sphericity.<br>
-<br>
-			Antioxidant: Peppermint was the top performer (23.3 mmol TE/L DPPH), followed by lavender/bergamot, with tea tree lowest (7.6 mmol TE/L). Activity remained stable after 12 months storage.<br>
-<br>
-			Antimicrobial: Lavender and bergamot inhibited S. Typhimurium at 5 µg/mL; tea tree and peppermint required 10 µg/mL. The linalool/linalyl-acetate chemotype showed superior Gram-negative penetration.</div>
-</div>
-<div class="page">
-  <div class="header">
-    <span class="num">Slide 15 of 18</span>
-    <h1>Machine Learning Insights</h1>
-  </div>
-  <div class="notes">Model Details: L1-regularised logistic regression (C=1.75) trained on 171 EO profiles encoded as 2048-bit Morgan fingerprints, reduced to 682 significant bits. Achieved 81% cross-validated accuracy and 0.88 ROC AUC.<br>
-<br>
-			Key Finding: Only 10 fingerprint bits passed the permutation-importance threshold. The hydroxylated aromatic fragment alone elevated predicted anti-Salmonella activity probability from ~45% to ~95%.<br>
-<br>
-			Positive predictors: Phenolic -OH on aromatic rings, acetate esters, furan heterocycles, cycloalkene motifs.<br>
-<br>
-			Negative predictors: Branched bicyclic hydrocarbons, tertiary alcohols, long aliphatic chains.<br>
-<br>
-			This explains the order-of-magnitude potency gap between phenolic-rich oregano/thyme oils and the linalyl-acetate-dominated lavender/bergamot examined here.</div>
-</div>
-<div class="page">
-  <div class="header">
-    <span class="num">Slide 16 of 18</span>
-    <h1>Scope &amp; Constraints</h1>
+    <span class="num">Slide 14 of 16</span>
+    <h1>Limitations</h1>
   </div>
   <div class="notes">Experimental Limitations: • Only 4 commercial EOs • Encapsulation: no release kinetics • Antioxidant: missing FRAP, ORAC • Antimicrobial: single strain.<br>
 			Computational Limitations: • MIC heterogeneity • Trace compounds ignored • No stereochemistry • No external validation.</div>
 </div>
 <div class="page">
   <div class="header">
-    <span class="num">Slide 17 of 18</span>
+    <span class="num">Slide 15 of 16</span>
     <h1>The Research Horizon</h1>
   </div>
   <div class="notes"><em>No speaker notes for this slide.</em></div>
 </div>
 <div class="page">
   <div class="header">
-    <span class="num">Slide 18 of 18</span>
+    <span class="num">Slide 16 of 16</span>
     <h1>Key Takeaways</h1>
   </div>
   <div class="notes">Final Summary: Lightweight ML pipelines bridge compositional analytics and biological performance. Key finding: phenolic -OH is the strongest predictor of anti-Salmonella activity.</div>

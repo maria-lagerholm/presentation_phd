@@ -1081,15 +1081,16 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 
 .deck-tagline {
   position: fixed;
-  top: 18px;
+  top: 16px;
   left: 24px;
   z-index: 30;
   font-family: "Crimson Text", Georgia, serif;
-  font-size: 0.42em;
-  font-style: italic;
-  font-weight: 400;
-  color: rgba(26, 58, 92, 0.72);
-  letter-spacing: 0.03em;
+  font-size: 0.75em;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(26, 58, 92, 0.9);
+  letter-spacing: 0.12em;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.4s ease;

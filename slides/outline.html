@@ -276,7 +276,6 @@
 	<!-- KEY FINDINGS: ML MODEL -->
 	<section id="findings-ml">
 		<div class="conc-section-container">
-			<div class="conc-label" style="color: #1a3a5c;">Findings</div>
 			<h2 class="conc-h2">Machine Learning Insights</h2>
 
 			<div style="display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 25px;">
@@ -316,7 +315,7 @@
 							</div>
 						</div>
 						<div class="conc-info-box" style="margin-top: 10px;">Cross-validated test metrics* (Table 4.8)</div>
-						<p style="font-size: 0.32em; color: #888; margin: 6px 0 0 0; line-height: 1.45;">*The model predicts anti-<i>Salmonella</i> activity from molecular fingerprint features. <strong>Accuracy</strong> — share of oils classified correctly. <strong>Sensitivity</strong> — active oils correctly identified. <strong>Specificity</strong> — inactive oils correctly rejected. <strong>F1</strong> — balance between finding active oils and avoiding false positives. <strong>ROC AUC</strong> — ability to rank active oils above inactive ones.</p>
+						<p style="font-size: 0.32em; color: #888; margin: 6px 0 0 0; line-height: 1.45;">*The model predicts anti-<i>Salmonella</i> activity from molecular fingerprint features. <strong>Accuracy</strong> share of oils classified correctly. <strong>Sensitivity</strong> active oils correctly identified. <strong>Specificity</strong> inactive oils correctly rejected. <strong>F1</strong> balance between finding active oils and avoiding false positives. <strong>ROC AUC</strong> ability to rank active oils above inactive ones.</p>
 					</div>
 
 					<div style="background: linear-gradient(135deg, rgba(201,162,39,0.1), rgba(201,162,39,0.05)); padding: 20px; border-radius: 12px; border: 2px solid #c9a227;">
@@ -350,24 +349,17 @@
 				</div>
 
 				<div class="conc-ml-card">
-					<h4 class="conc-h4" style="color: #1a3a5c; justify-content: center;">Predictive Substructures</h4>
-					<div style="font-size: 0.45em;">
-						<div style="margin-bottom: 12px;">
-							<div style="color: #27ae60; font-weight: 600; margin-bottom: 6px;">↑ Positive Coefficients</div>
-							<div style="display: flex; flex-wrap: wrap; gap: 4px;">
-								<span style="background: rgba(39,174,96,0.15); padding: 3px 8px; border-radius: 4px; color: #27ae60;">Phenolic -OH</span>
-								<span style="background: rgba(39,174,96,0.15); padding: 3px 8px; border-radius: 4px; color: #27ae60;">Acetate ester</span>
-								<span style="background: rgba(39,174,96,0.15); padding: 3px 8px; border-radius: 4px; color: #27ae60;">Furan ring</span>
-							</div>
-						</div>
-						<div>
-							<div style="color: #e74c3c; font-weight: 600; margin-bottom: 6px;">↓ Negative Coefficients</div>
-							<div style="display: flex; flex-wrap: wrap; gap: 4px;">
-								<span style="background: rgba(231,76,60,0.15); padding: 3px 8px; border-radius: 4px; color: #e74c3c;">Bicyclic HC</span>
-								<span style="background: rgba(231,76,60,0.15); padding: 3px 8px; border-radius: 4px; color: #e74c3c;">Tertiary alcohols</span>
-							</div>
-						</div>
+					<h4 class="conc-h4" style="color: #1a3a5c; justify-content: center;">Feature Selection Funnel</h4>
+					<div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+						<div style="width: 100%; height: 34px; background: linear-gradient(135deg, #1a3a5c, #2a4a6c); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.55em;">2048 <span style="font-weight: 400; opacity: 0.85; margin-left: 5px;">Morgan bits</span></div>
+						<svg width="16" height="12" style="opacity: 0.4;"><path d="M8 2 L8 10 M3 5 L8 10 L13 5" stroke="#888" stroke-width="2" fill="none"/></svg>
+						<div style="width: 82%; height: 32px; background: linear-gradient(135deg, #29527a, #3a628a); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.52em;">682 <span style="font-weight: 400; opacity: 0.85; margin-left: 5px;">present in data</span></div>
+						<svg width="16" height="12" style="opacity: 0.4;"><path d="M8 2 L8 10 M3 5 L8 10 L13 5" stroke="#888" stroke-width="2" fill="none"/></svg>
+						<div style="width: 64%; height: 30px; background: linear-gradient(135deg, #3d6a99, #4d7aa9); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.5em;">337 <span style="font-weight: 400; opacity: 0.85; margin-left: 5px;">uncorrelated</span></div>
+						<svg width="16" height="12" style="opacity: 0.4;"><path d="M8 2 L8 10 M3 5 L8 10 L13 5" stroke="#888" stroke-width="2" fill="none"/></svg>
+						<div style="width: 46%; height: 30px; background: linear-gradient(135deg, #c9a227, #d9b23a); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.5em;">10 <span style="font-weight: 400; opacity: 0.9; margin-left: 5px;">key</span></div>
 					</div>
+					<div style="font-size: 0.36em; color: #888; text-align: center; margin-top: 8px; line-height: 1.4;">Permutation importance kept only bits whose shuffling lowered metrics by ≥1%.</div>
 					<div style="margin-top: 15px; padding-top: 12px; border-top: 1px dashed rgba(26,58,92,0.2);">
 						<div style="display: flex; flex-direction: column; gap: 8px; align-items: stretch;">
 							<div style="font-size: 0.68em; background: rgba(26,58,92,0.12); padding: 6px 8px; border-radius: 4px; border-left: 3px solid #1a3a5c; text-align: left;">
@@ -385,11 +377,13 @@
 		</div>
 
 		<aside class="notes">
-			<strong>Model Details:</strong> L1-regularised logistic regression (C=1.75), 5×100-fold stratified cross-validation. Cross-validated test metrics (Table 4.8): accuracy 0.81, sensitivity 0.83, specificity 0.80, F1 0.82, MCC 0.63, ROC AUC 0.88.<br><br>
-			<strong>Key Finding:</strong> Phenolic -OH on aromatic rings is the strongest predictor (~45% → ~95% activity probability). Carvacrol and thymol (p-cymene phenols) enable protonophoric H⁺ leakage across the outer membrane of <i>S.</i> Typhimurium (Helander et al., 1998; Gören et al., 2004; Peñalver et al., 2005). Eugenol kills via oxidative stress from reactive oxygen species (Aljuwayd et al., 2024).<br><br>
-			<strong>Positive predictors:</strong> Phenolic -OH on aromatic rings, acetate esters, furan heterocycles, cycloalkene motifs.<br>
-			<strong>Negative predictors:</strong> Branched bicyclic hydrocarbons, tertiary alcohols, long aliphatic chains.<br><br>
-			This explains the order-of-magnitude potency gap between phenolic-rich oregano/thyme oils and the linalyl-acetate-dominated lavender/bergamot examined here.
+			We first encoded the molecules using 2048-bit Morgan fingerprints, which is a standard setting. After removing the fragments that were never present in our dataset, we were left with 682 descriptors.<br><br>
+			Then we removed one member of each highly correlated pair, reducing the number of descriptors to 337; after that we ranked the remaining descriptors by permutation feature importance, keeping only those whose shuffling lowered our metrics by at least 1%.<br><br>
+			To check the model, we used 5-fold cross-validation. The Area Under the Curve was 0.88, meaning the model ranked active oils above inactive ones very well — about 88% of the time a randomly chosen active oil received a higher predicted probability than a randomly chosen inactive one. Under Hosmer's scale, that is excellent discrimination, though this remains internal validation on our dataset, not an external holdout set.<br><br>
+			The training accuracy was 0.84 and the test accuracy was 0.81, so the gap was small. That suggests the model generalised well and was not simply memorising the training data.<br><br>
+			Based on this, we could interpret the selected features more confidently. Phenolic structures, especially encoded by Bit_1607, were strongly linked to anti-<i>Salmonella</i> activity, while simple terpene hydrocarbons, such as Bit_549, were linked to an absence of antimicrobial activity.<br><br>
+			Literature confirms our findings: a study by Soković and colleagues documented that carvacrol and thymol, which differ only in hydroxyl orientation on the benzene ring, show MICs as low as 0.5 µg/mL against <i>S.</i> Typhimurium.<br><br>
+			This validates our logistic regression analysis, where bits encoding an aromatic hydroxyl group receive the strongest positive weights.
 		</aside>
 	</section>
 

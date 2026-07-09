@@ -303,19 +303,21 @@ $overlayElementFgColor: 240, 240, 240;
 
 .deck-tagline {
 	position: fixed;
-	top: 16px;
-	left: 24px;
+	bottom: 18px;
+	left: 26px;
 	z-index: 30;
-	font-family: 'Crimson Text', Georgia, serif;
-	font-size: 0.75em;
+	font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+	font-size: 0.42em;
 	font-style: normal;
-	font-weight: 700;
+	font-weight: 500;
 	text-transform: uppercase;
-	color: rgba($academicNavy, 0.9);
-	letter-spacing: 0.12em;
+	color: rgba($academicNavy, 0.45);
+	letter-spacing: 0.22em;
+	padding-left: 12px;
+	border-left: 2px solid rgba($academicGold, 0.6);
 	pointer-events: none;
 	opacity: 0;
-	transition: opacity 0.4s ease;
+	transition: opacity 0.5s ease;
 
 	&.is-visible {
 		opacity: 1;

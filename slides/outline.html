@@ -452,15 +452,18 @@
 			#findings-ml .fi-grid {
 				display: grid; grid-template-columns: 260px 1fr; gap: 32px; align-items: start;
 			}
-			#findings-ml .fs-funnel { text-align: center; padding-top: 2px; }
+			#findings-ml .fs-funnel {
+				display: flex; flex-direction: column; align-items: center; padding-top: 2px;
+			}
 			#findings-ml .fs-funnel .fs-label {
 				font-size: 0.36em; color: #1a3a5c; font-weight: 700; letter-spacing: 0.06em;
 				text-transform: uppercase; margin-bottom: 12px; text-align: left;
+				align-self: stretch;
 			}
 			#findings-ml .fs-stage {
-				margin: 0 auto 3px; color: #fff; border-radius: 4px;
-				padding: 9px 6px 8px; line-height: 1.15;
-				clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+				margin: 0 0 3px; color: #fff; border-radius: 4px;
+				padding: 9px 6px 8px; line-height: 1.15; text-align: center;
+				box-sizing: border-box;
 			}
 			#findings-ml .fs-stage .n {
 				font-family: 'Crimson Text', serif; font-weight: 700; font-size: 0.58em; display: block;
@@ -468,6 +471,7 @@
 			#findings-ml .fs-stage .l { font-size: 0.28em; opacity: 0.9; display: block; }
 			#findings-ml .fs-note {
 				margin-top: 10px; font-size: 0.28em; color: #666; line-height: 1.35; text-align: left;
+				align-self: stretch;
 			}
 			#findings-ml .metric-row td { padding: 8px 12px; font-size: 0.48em; border-bottom: 1px solid rgba(26,58,92,0.08); }
 			#findings-ml .metric-row th { padding: 9px 12px; font-size: 0.42em; }
@@ -491,13 +495,13 @@
 			<div class="fi-grid">
 				<div class="fs-funnel">
 					<div class="fs-label">Feature Selection</div>
-					<div class="fs-stage" style="width: 100%; background: #1a3a5c;">
+					<div class="fs-stage" style="width: 100%; background: #1a3a5c; clip-path: polygon(0 0, 100% 0, 91% 100%, 9% 100%);">
 						<span class="n">2048</span><span class="l">Morgan bits</span>
 					</div>
-					<div class="fs-stage" style="width: 82%; background: #2f5680;">
+					<div class="fs-stage" style="width: 82%; background: #2f5680; clip-path: polygon(0 0, 100% 0, 87.8% 100%, 12.2% 100%);">
 						<span class="n">682</span><span class="l">present in data</span>
 					</div>
-					<div class="fs-stage" style="width: 62%; background: #4a6741;">
+					<div class="fs-stage" style="width: 62%; background: #4a6741; clip-path: polygon(0 0, 100% 0, 80.65% 100%, 19.35% 100%);">
 						<span class="n">337</span><span class="l">uncorrelated</span>
 					</div>
 					<div class="fs-stage" style="width: 38%; background: #c9a227; clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%);">

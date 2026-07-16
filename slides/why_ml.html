@@ -176,7 +176,7 @@
 					<div style="flex: 1;">
 						<h4 style="font-size: 0.6em; color: #4a6741; margin: 0 0 5px 0; font-weight: 800;">2. Removing "Bystanders" (PFI)</h4>
 						<p style="font-size: 0.45em; color: #333; line-height: 1.4; margin: 0;">
-							<strong>Rule:</strong> Keep if AUC drops by \( \ge 0.01 \) when shuffled.<br>
+							<strong>Rule:</strong> Keep if ROC AUC drops by \( \ge 0.01 \) when shuffled (100 repeats).<br>
 							<strong>Why:</strong> Filters out noise, keeping only genuine signals.
 						</p>
 					</div>
@@ -184,7 +184,7 @@
 				</div>
 	
 				<div style="background: rgba(177, 53, 7, 0.05); padding: 12px; border-radius: 5px; border-left: 5px solid #b13507;">
-					<h4 style="font-size: 0.6em; color: #b13507; margin: 0 0 8px 0; font-weight: 800;">3. Model Evaluation (Internal Validation)</h4>
+					<h4 style="font-size: 0.6em; color: #b13507; margin: 0 0 8px 0; font-weight: 800;">3. Model Evaluation (Repeated Stratified CV)</h4>
 					
 					<div style="display: flex; gap: 15px; align-items: center;">
 						<div style="flex: 1;">
@@ -251,16 +251,16 @@
 			We started with 682 sparse Morgan fingerprint descriptors (98% zeros on average).<br>
 			We narrowed them to 10 in two steps: (1) removed one member of each highly correlated pair (Pearson |r| &gt; 0.95), reducing the set from 682 to 337; (2) ranked the remaining descriptors by permutation feature importance (100 repeats) on the L1-penalised logistic model, keeping only those whose shuffling lowered ROC AUC by at least 0.01.<br><br>
 	
-			<strong>2. The "Report Card" (Middle - Box 3):</strong><br>
+			<strong>2. The "Report Card" (Middle: Box 3):</strong><br>
 			Now, look at the orange box. We have to ask: "Is this model actually any good?"<br>
-			We used 5-fold cross-validation, and here are the results.<br><br>
+			We used repeated stratified 5-fold cross-validation with 100 repeats, and here are the results.<br><br>
 			
 			<strong>EXPLAINING AUC (The 0.88 Score):</strong><br>
 			You see that score <strong>AUC = 0.88</strong>?<br>
 			Think of AUC like a grade for the model:<br>
 			- <strong>0.50</strong> is a Coin Toss (Pure guessing).<br>
 			- <strong>1.00</strong> is Perfection.<br>
-			- <strong>0.80 - 0.90</strong> is considered "Excellent."<br>
+			- <strong>0.80 to 0.90</strong> is considered "Excellent."<br>
 			So, at 0.88, our model is an "A-student." It is very good at distinguishing between active and inactive oils.<br><br>
 	
 			<strong>EXPLAINING THE GRAPHS (Figure 3):</strong><br>
@@ -276,7 +276,7 @@
 		</aside>
 	</section>
 
-	<!-- Drill-down Slide 7: Molecular Substructures - Active vs Inactive -->
+	<!-- Drill-down Slide 7: Molecular Substructures: Active vs Inactive -->
 	<section id="molecular-substructures-slide">
 		<div style="position: absolute; top: 20px; left: 20px; font-size: 0.4em; z-index: 20;">
 			<a href="#/why-hub" style="color: #666; text-decoration: none;">&larr; Back to main slide</a>

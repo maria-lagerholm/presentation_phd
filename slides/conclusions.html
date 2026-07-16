@@ -1,22 +1,57 @@
 <style>
-	/* Conclusions Slide Specific Styles */
-	.conc-section-container { text-align: left; max-width: 1100px; margin: 0 auto; transform: scale(0.88); transform-origin: top; }
-	.conc-label { font-family: 'Crimson Text', serif; font-size: 0.7em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 5px; }
+	.conc-section-container { text-align: left; max-width: 1100px; margin: 0 auto; transform: scale(0.92); transform-origin: top; }
+	.conc-label { font-family: 'Crimson Text', serif; font-size: 0.7em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 18px; }
 	.conc-h2 { color: #1a3a5c; font-size: 1.4em; border: none; padding: 0; margin-bottom: 20px; }
-	
-	/* Cards & Boxes */
 	.conc-ml-card { background: rgba(26, 58, 92, 0.05); padding: 18px; border-radius: 12px; border-left: 4px solid #1a3a5c; }
-	.conc-limit-card { background: rgba(177, 53, 7, 0.05); padding: 18px; border-radius: 12px; border-left: 4px solid #b13507; }
-	
-	/* Layout Helpers */
-	.conc-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 	.conc-flex-center { display: flex; justify-content: center; align-items: center; gap: 20px; }
-	
-	/* Typography */
 	.conc-h4 { font-size: 0.75em; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px; }
 	.conc-info-box { font-size: 0.42em; color: #666; background: rgba(0,0,0,0.05); padding: 6px 10px; border-radius: 4px; text-align: center; }
-	.conc-list { font-size: 0.48em; color: #444; line-height: 1.6; margin: 0; padding-left: 18px; }
-	.conc-list li { margin-bottom: 6px; }
+	.limit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+	.limit-col { padding: 8px 4px 0 4px; }
+	.limit-col-title { font-family: 'Crimson Text', serif; font-size: 0.72em; font-weight: 700; margin: 0 0 18px 0; display: flex; align-items: center; gap: 10px; }
+	.limit-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 18px; }
+	.limit-num { flex: 0 0 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Crimson Text', serif; font-weight: 700; font-size: 0.55em; color: #fff; }
+	.limit-text { font-size: 0.48em; color: #333; line-height: 1.45; padding-top: 4px; }
+	.limit-text strong { display: block; margin-bottom: 3px; color: #1a3a5c; }
+	#future-directions { text-align: left !important; }
+	#future-directions h2 { display: block !important; text-align: left !important; border: none !important; }
+	.future-wrap { max-width: 1040px; margin: 0 auto; text-align: left; }
+	.future-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 14px; }
+	.future-col-head {
+		display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+	}
+	.future-col-icon {
+		width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex: 0 0 44px;
+	}
+	.future-col-title {
+		font-family: 'Crimson Text', serif; font-size: 0.72em; font-weight: 700; margin: 0; padding: 0; border: none;
+	}
+	.future-tile {
+		display: flex; gap: 12px; align-items: flex-start;
+		padding: 14px 16px; margin-bottom: 10px; border-radius: 12px;
+		background: rgba(255,255,255,0.9); box-shadow: 0 4px 16px rgba(26,58,92,0.06);
+	}
+	.future-tile .ft-num {
+		flex: 0 0 32px; height: 32px; border-radius: 50%; color: #fff;
+		font-family: 'Crimson Text', serif; font-weight: 700; font-size: 0.5em;
+		display: flex; align-items: center; justify-content: center;
+	}
+	.future-tile .ft-title { font-size: 0.46em; font-weight: 700; color: #1a3a5c; margin: 0 0 3px 0; line-height: 1.2; }
+	.future-tile .ft-body { font-size: 0.36em; color: #555; line-height: 1.35; margin: 0; }
+	.future-loop {
+		margin-top: 18px; padding: 16px 20px; border-radius: 14px;
+		background: linear-gradient(135deg, rgba(201,162,39,0.14) 0%, rgba(74,103,65,0.10) 50%, rgba(26,58,92,0.10) 100%);
+		border: 1px solid rgba(201,162,39,0.35);
+		display: flex; align-items: center; justify-content: space-between; gap: 12px;
+	}
+	.future-loop-step {
+		flex: 1; text-align: center; padding: 8px 6px;
+	}
+	.future-loop-step .fl-label {
+		font-family: 'Crimson Text', serif; font-size: 0.5em; font-weight: 700; color: #1a3a5c; margin: 0 0 2px 0;
+	}
+	.future-loop-step .fl-sub { font-size: 0.3em; color: #666; margin: 0; }
+	.future-loop-arrow { color: #c9a227; font-size: 0.9em; flex: 0 0 auto; }
 </style>
 
 <!-- LIMITATIONS -->
@@ -24,91 +59,161 @@
 		<div class="conc-section-container">
 			<div class="conc-label" style="color: #b13507;">Limitations</div>
 
-			<div class="conc-grid-2">
-				<div class="conc-limit-card">
-					<h4 class="conc-h4" style="color: #b13507;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v8L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45L14 10V2"/><path d="M8.5 2h7"/></svg> Experimental Phase</h4>
-					<ul class="conc-list">
-						<li>Only <strong>4 commercial oils</strong></li>
-						<li>Encapsulation: morphology only; no release kinetics, volatile retention, biological activity, or food matrix testing</li>
-						<li>Antioxidants: DPPH &amp; ABTS only; missing FRAP, ORAC, CUPRAC, TEAC</li>
-						<li>Single strain <i>S.</i> Typhimurium ATCC 14028</li>
-						<li>Other pathogens, clinical isolates not tested</li>
-					</ul>
+			<div class="limit-grid">
+				<div class="limit-col" style="border-left: 4px solid #b13507; padding-left: 22px;">
+					<h3 class="limit-col-title" style="color: #b13507;">
+						<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v8L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45L14 10V2"/><path d="M8.5 2h7"/></svg>
+						Experimental
+					</h3>
+					<div class="limit-item">
+						<div class="limit-num" style="background: #b13507;">1</div>
+						<div class="limit-text"><strong>Only four commercial oils</strong>Limited chemotypic coverage; one production batch each.</div>
+					</div>
+					<div class="limit-item">
+						<div class="limit-num" style="background: #b13507;">2</div>
+						<div class="limit-text"><strong>Encapsulation was morphological</strong>No release kinetics, retained bioactivity, or food matrix tests.</div>
+					</div>
+					<div class="limit-item">
+						<div class="limit-num" style="background: #b13507;">3</div>
+						<div class="limit-text"><strong>Single pathogen strain</strong>Only <i>S.</i> Typhimurium ATCC 14028; no clinical isolates or biofilms.</div>
+					</div>
 				</div>
 
-				<div class="conc-limit-card">
-					<h4 class="conc-h4" style="color: #b13507;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/><path d="M12 8V4H8"/></svg> Computational Phase</h4>
-					<ul class="conc-list">
-						<li>Heterogeneous MIC protocols (media, inocula, strains)</li>
-						<li>Trace compounds ignored (only constituents &gt;10%)</li>
-						<li>Morgan FPs: no stereochemistry; hash collisions blur attribution</li>
-						<li>Assumes <strong>linear additive effects</strong>; binary classification only</li>
-						<li><strong>Internal cross-validation only</strong> — no external holdout set</li>
-						<li>Small sample (171) vs 682 features risks optimistic metrics</li>
-						<li>Highlighted substructures not mechanistically confirmed in lab</li>
-					</ul>
+				<div class="limit-col" style="border-left: 4px solid #1a3a5c; padding-left: 22px;">
+					<h3 class="limit-col-title" style="color: #1a3a5c;">
+						<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/><path d="M12 8V4H8"/></svg>
+						Computational
+					</h3>
+					<div class="limit-item">
+						<div class="limit-num" style="background: #1a3a5c;">1</div>
+						<div class="limit-text"><strong>Heterogeneous literature data</strong>MIC protocols, media, and strains vary across sources.</div>
+					</div>
+					<div class="limit-item">
+						<div class="limit-num" style="background: #1a3a5c;">2</div>
+						<div class="limit-text"><strong>Internal validation only</strong>Repeated stratified CV; no external holdout set.</div>
+					</div>
+					<div class="limit-item">
+						<div class="limit-num" style="background: #1a3a5c;">3</div>
+						<div class="limit-text"><strong>Candidates, not confirmed mechanisms</strong>Highlighted substructures still need wet lab confirmation.</div>
+					</div>
 				</div>
 			</div>
 		</div>
 
 		<aside class="notes">
-			<strong>Experimental Limitations:</strong> • Only 4 commercial EOs — limited chemotypic and batch variation • Encapsulation: morphology only; no release kinetics, volatile retention, biological activity, or food matrix • Antioxidants: DPPH &amp; ABTS only; missing FRAP, ORAC, CUPRAC, TEAC • Single <i>S.</i> Typhimurium ATCC 14028 strain; one protocol • Other pathogens, clinical isolates and food matrices not tested.<br>
-			<strong>Computational Limitations:</strong> • Heterogeneous MIC protocols from literature (media, inocula, strains) • Trace compounds ignored (&gt;10% threshold only) • Morgan FPs lack stereochemistry; hash collisions • Linear additive assumption; binary labels only • Internal CV only, no external holdout • n=171 vs 682 features • Substructure–activity links not mechanistically confirmed in lab.
+			Like every study, this work has limitations that should be considered. In the experimental phase, we tested only four commercial essential oils and one <i>Salmonella</i> Typhimurium strain. We focused mainly on bead morphology and did not evaluate release kinetics, biological activity after encapsulation, or performance in food systems.<br><br>
+			In the computational phase, the dataset came from published studies that used different experimental protocols, and only major compounds present above 10% were included. Although the model performed well, it was evaluated only by internal repeated stratified cross validation, with bootstrapping used to estimate coefficient uncertainty rather than predictive performance. The identified molecular features should therefore be viewed as promising candidates that require confirmation in future laboratory experiments.
 		</aside>
 </section>
 
 	<!-- FUTURE DIRECTIONS -->
 	<section id="future-directions" data-no-animation>
-		<div class="conc-section-container">
-			<div class="conc-label" style="color: #1a3a5c; margin-bottom: 16px;">Future Directions</div>
+		<div class="future-wrap">
+			<div class="conc-label" style="color: #1a3a5c; margin-bottom: 6px;">Future Directions</div>
+			<p style="font-size: 0.4em; color: #777; margin: 0 0 4px 0; text-align: left;">From broader wet-lab work to a closed AI ↔ lab loop</p>
 
-			<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
-				<div style="padding: 14px 16px; border-radius: 12px; border-top: 4px solid #4a6741; background: linear-gradient(180deg, rgba(74,103,65,0.08) 0%, rgba(74,103,65,0.02) 100%);">
-					<h4 style="color: #4a6741; font-size: 0.66em; margin: 0 0 8px 0; padding: 0;">
-						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a6741" stroke-width="2" style="vertical-align: middle; margin-right: 6px; margin-top: -2px;"><path d="M10 2v8L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45L14 10V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
-						Experimental Expansion
-					</h4>
-					<ul style="font-size: 0.46em; padding-left: 16px; color: #444; line-height: 1.45; margin: 0;">
-						<li style="margin-bottom: 5px;"><strong>Profiling:</strong> more oils</li>
-						<li style="margin-bottom: 5px;"><strong>Antioxidants:</strong> more assays</li>
-						<li style="margin-bottom: 5px;"><strong>Encapsulation:</strong> try multiple carriers, do bioactivity tests, test in real foods, etc.</li>
-						<li style="margin-bottom: 5px;"><strong>Bioactivity:</strong> more pathogens, test on biofilms; mechanism of action, multi-omics</li>
-					</ul>
+			<div class="future-cols">
+				<div>
+					<div class="future-col-head">
+						<div class="future-col-icon" style="background: rgba(74,103,65,0.15);">
+							<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4a6741" stroke-width="2"><path d="M10 2v8L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45L14 10V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
+						</div>
+						<h3 class="future-col-title" style="color: #4a6741;">Experimental</h3>
+					</div>
+					<div class="future-tile">
+						<div class="ft-num" style="background: #4a6741;">1</div>
+						<div>
+							<div class="ft-title">More oils &amp; microorganisms</div>
+							<p class="ft-body">Analyse a larger set of essential oils and microbes</p>
+						</div>
+					</div>
+					<div class="future-tile">
+						<div class="ft-num" style="background: #4a6741;">2</div>
+						<div>
+							<div class="ft-title">Different encapsulation systems</div>
+							<p class="ft-body">Explore alternative carriers beyond alginate beads</p>
+						</div>
+					</div>
+					<div class="future-tile">
+						<div class="ft-num" style="background: #4a6741;">3</div>
+						<div>
+							<div class="ft-title">Real food applications</div>
+							<p class="ft-body">Test formulations in actual food systems</p>
+						</div>
+					</div>
 				</div>
 
-				<div style="padding: 14px 16px; border-radius: 12px; border-top: 4px solid #1a3a5c; background: linear-gradient(180deg, rgba(26,58,92,0.08) 0%, rgba(26,58,92,0.02) 100%);">
-					<h4 style="color: #1a3a5c; font-size: 0.66em; margin: 0 0 8px 0; padding: 0;">
-						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a3a5c" stroke-width="2" style="vertical-align: middle; margin-right: 6px; margin-top: -2px;"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
-						Computational &amp; AI
-					</h4>
-					<ul style="font-size: 0.46em; padding-left: 16px; color: #444; line-height: 1.45; margin: 0;">
-						<li style="margin-bottom: 5px;">Run the protocol on other pathogens and plants</li>
-						<li style="margin-bottom: 5px;">Graph neural networks on molecular graphs</li>
-						<li style="margin-bottom: 5px;">Transformer molecular language models (stereochemistry-aware)</li>
-						<li style="margin-bottom: 5px;">Active-learning loops: predict → wet-lab → retrain</li>
-						<li style="margin-bottom: 5px;"><strong>ChemBERTa:</strong> pretrained on SMILES, further fine-tuned on the small EO dataset</li>
-						<li style="margin-bottom: 5px;"><strong>AI research agents:</strong> autonomously mine literature to expand MIC datasets</li>
-					</ul>
+				<div>
+					<div class="future-col-head">
+						<div class="future-col-icon" style="background: rgba(26,58,92,0.12);">
+							<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a5c" stroke-width="2"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+						</div>
+						<h3 class="future-col-title" style="color: #1a3a5c;">Computational</h3>
+					</div>
+					<div class="future-tile">
+						<div class="ft-num" style="background: #1a3a5c;">1</div>
+						<div>
+							<div class="ft-title">Extend the pipeline</div>
+							<p class="ft-body">Apply the same approach with modern AI methods</p>
+						</div>
+					</div>
+					<div class="future-tile">
+						<div class="ft-num" style="background: #1a3a5c;">2</div>
+						<div>
+							<div class="ft-title">Graph nets &amp; molecular LMs</div>
+							<p class="ft-body">Richer models of chemical structure and activity</p>
+						</div>
+					</div>
+					<div class="future-tile">
+						<div class="ft-num" style="background: #1a3a5c;">3</div>
+						<div>
+							<div class="ft-title">Active learning</div>
+							<p class="ft-body">Predictions guide the next laboratory experiments</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="future-loop">
+				<div class="future-loop-step">
+					<div class="fl-label">Predict</div>
+					<p class="fl-sub">AI ranks candidates</p>
+				</div>
+				<div class="future-loop-arrow">→</div>
+				<div class="future-loop-step">
+					<div class="fl-label">Test</div>
+					<p class="fl-sub">wet-lab validation</p>
+				</div>
+				<div class="future-loop-arrow">→</div>
+				<div class="future-loop-step">
+					<div class="fl-label">Retrain</div>
+					<p class="fl-sub">update the model</p>
+				</div>
+				<div class="future-loop-arrow">↻</div>
+				<div style="flex: 1.2; text-align: left; padding-left: 8px; border-left: 2px solid rgba(201,162,39,0.5);">
+					<div style="font-size: 0.32em; color: #c9a227; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2px;">Goal</div>
+					<p style="font-size: 0.4em; color: #1a3a5c; line-height: 1.3; margin: 0; font-weight: 600;">Continuous AI ↔ lab feedback for faster discovery</p>
 				</div>
 			</div>
 		</div>
 
 		<aside class="notes">
-			<strong>Future Directions (from the thesis):</strong><br>
-			<strong>Experimental:</strong> Expand beyond four commercial oils across chemotypes, seasons and processing; GC-HRMS, 2D-GC and untargeted LC-MS for trace synergists with reference libraries. Full antioxidant redox panel (FRAP, CUPRAC, ORAC, TEAC) plus liposome ROS / lipid-peroxidation models. Encapsulation: composite carriers (alginate-chitosan, whey-alginate, Pickering), process intensification (multi-nozzle, spinning-disk, continuous freeze-drying), in-line NIR/Raman, and release/stability/aroma in real food matrices. Broader antimicrobial testing: pathogens, clinical isolates, biofilms; vary pH, salt, fat; time-kill, membrane integrity and multi-omics; synergy with conventional preservatives.<br>
-			<strong>Computational &amp; AI:</strong> GNNs on molecular graphs; transformer molecular language models; active-learning loops; ChemBERTa fine-tuned on the EO dataset; AI research agents to expand MIC datasets from literature; run the protocol on other pathogens and plants.<br>
+			This work opens several directions for future research, both experimentally and computationally.<br><br>
+			On the experimental side, we would like to analyse a larger number of essential oils and microorganisms, explore different encapsulation systems, and test our formulations in real food applications.<br><br>
+			On the computational side, the same pipeline can be extended using modern AI methods such as graph neural networks, molecular language models, and active learning, where predictions guide the next laboratory experiments.<br><br>
+			Ultimately, the goal is to create a continuous feedback loop between AI and laboratory validation, making the discovery of new plant derived antimicrobials faster and more efficient.
 		</aside>
 	</section>
 
 	<!-- THANK YOU -->
 	<section id="thank-you" class="thank-you-slide" data-no-animation>
-		<div style="text-align: center; max-width: 900px; margin: 0 auto; padding-top: 50px;">
-			<div id="thank-you-lottie" aria-hidden="true" style="width: 320px; height: 240px; margin: 0 auto 28px auto;"></div>
+		<div style="text-align: center; max-width: 1100px; margin: 0 auto; padding-top: 40px;">
+			<div id="thank-you-lottie" aria-hidden="true" style="width: 960px; height: 540px; margin: 0 auto 16px auto;"></div>
 			<h2 style="font-family: 'Crimson Text', serif; color: #1a3a5c; font-size: 2.2em; border: none; padding: 0; margin: 0;">Thank you</h2>
 		</div>
 
 		<aside class="notes">
-			Thank the committee and audience. Invite questions.
+			That concludes my presentation. I hope I have shown how combining experimental work with machine learning can help us better understand what drives the antimicrobial potential of plant essential oils and guide future discoveries of active molecular sites.<br><br>
+			Thank you very much for your attention, and I will be happy to answer any questions.
 		</aside>
 	</section>
-

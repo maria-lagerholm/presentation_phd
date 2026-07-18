@@ -277,8 +277,10 @@
 					</div>
 
 					<div class="lab-gap">
-						<div style="font-size: 0.3em; color: #b13507; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2px; text-align: left;">Research gap</div>
-						<p style="font-size: 0.4em; color: #1a3a5c; line-height: 1.35; margin: 0;">Composition matters: but <strong>which molecular features</strong> drive activity? → machine learning</p>
+						<div style="font-size: 0.3em; color: #b13507; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; text-align: left;">Research gap</div>
+						<p style="font-size: 0.38em; color: #1a3a5c; line-height: 1.4; margin: 0;">
+							The gap is the <strong>absence of a computational way to map active chemical motifs to plants</strong>, so we no longer need to test compounds one by one in the lab. Technology now lets us arrive at that knowledge computationally and save labour.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -287,7 +289,7 @@
 				We started in the lab, using GC-MS to profile four essential oils: tea tree, lavender, bergamot, and peppermint. In each one we identified over 98% of the volatiles. Tea tree was mainly terpinen-4-ol (45%), lavender and bergamot were rich in linalool and linalyl acetate, and peppermint was mostly isomenthol (49%).<br><br>
 				Next we tested antimicrobial activity against <i>Salmonella</i> Typhimurium ATCC 14028. Lavender and bergamot inhibited growth at 5 µg/mL, while tea tree and peppermint required 10 µg/mL. For antioxidant activity we used DPPH and ABTS: peppermint was the strongest antioxidant (23 mmol TE/L by DPPH), tea tree the weakest (8 mmol TE/L). Activity remained measurable after 12 months of storage.<br><br>
 				The problem is that raw oils evaporate and are hard to dose. So we encapsulated them into calcium alginate beads by electrostatic extrusion, a solvent free method. The wet beads are unstable, so we freeze dried them. Empty beads shrank from about 2.0 mm to 1.4 mm, roughly 30%, and stayed approximately spherical.<br><br>
-				Coming back to the antimicrobial activity of essential oils, one thing is clear: it depends on which molecules are inside the oil. Given the extensive list of molecules found in essential oils, which molecular structures actually matter? By eye it is impossible to answer; there are too many correlated compounds. That is where we move to the machine learning part of our work.
+				The research gap is not that bioactive compounds were unknown. For many years we learned which molecules work mainly by empirical laboratory testing, compound by compound and oil by oil. What was missing is a computational way to map chemical motifs linked to activity back to plants, so that this knowledge can be reached more systematically and with less labour. Now that the technology allows it, machine learning can help us leave that purely empirical path behind and prioritise what to test next. That is why we move to the computational part of the work.
 			</aside>
 		</section>
 
@@ -518,24 +520,60 @@
 				margin-top: 10px; font-size: 0.28em; color: #666; line-height: 1.35; text-align: left;
 				align-self: stretch;
 			}
-			#findings-ml .metric-row td { padding: 8px 12px; font-size: 0.48em; border-bottom: 1px solid rgba(26,58,92,0.08); }
-			#findings-ml .metric-row th { padding: 9px 12px; font-size: 0.42em; }
-			#findings-ml .plant-row {
-				display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
-				margin-top: 18px; align-items: end;
+			#findings-ml .metrics-compact {
+				width: 100%; border-collapse: collapse; margin: 0 0 8px 0;
+				background: rgba(255,255,255,0.95); border-radius: 10px; overflow: hidden;
+				box-shadow: 0 3px 12px rgba(26,58,92,0.07);
 			}
-			#findings-ml .plant-card { text-align: center; }
-			#findings-ml .plant-card img {
-				height: 175px; width: auto; margin: 0 auto; display: block;
+			#findings-ml .metrics-compact th {
+				background: #1a3a5c; color: #fff; padding: 4px 8px; font-size: 0.28em;
+				font-weight: 600; text-align: center;
+			}
+			#findings-ml .metrics-compact th:first-child { text-align: left; }
+			#findings-ml .metrics-compact td {
+				padding: 3px 8px; font-size: 0.34em; border-bottom: 1px solid rgba(26,58,92,0.07);
+			}
+			#findings-ml .metrics-compact td:first-child { color: #555; font-weight: 600; }
+			#findings-ml .metrics-compact td.num {
+				text-align: center; font-weight: 800; font-size: 0.4em; font-variant-numeric: tabular-nums;
+			}
+			#findings-ml .metrics-compact tr.hl { background: rgba(201,162,39,0.12); }
+			#findings-ml .plant-row {
+				display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px;
+				margin-top: 10px; align-items: start;
+			}
+			#findings-ml .plant-card { text-align: center; position: relative; }
+			#findings-ml .plant-card .plant-img {
+				height: 155px; width: auto; margin: 0 auto; display: block;
 				background: transparent !important; border: none !important;
 				box-shadow: none !important; border-radius: 0 !important;
 			}
-			#findings-ml .pname { font-family: 'Crimson Text', serif; font-size: 0.45em; font-weight: 700; color: #1a3a5c; margin-top: 4px; }
-			#findings-ml .pmol { font-size: 0.3em; color: #4a6741; font-weight: 600; }
+			#findings-ml .pname { font-family: 'Crimson Text', serif; font-size: 0.4em; font-weight: 700; color: #1a3a5c; margin-top: 2px; }
+			#findings-ml .pmol { font-size: 0.28em; color: #4a6741; font-weight: 600; margin-bottom: 4px; }
+			#findings-ml .bit-wrap {
+				position: relative; display: inline-block; margin-top: 2px;
+				background: #fff; border-radius: 8px; padding: 6px 8px 4px;
+				box-shadow: 0 2px 10px rgba(26,58,92,0.08);
+			}
+			#findings-ml .bit-wrap img {
+				height: 72px; width: auto; margin: 0; display: block;
+				background: transparent !important; border: none !important;
+				box-shadow: none !important; border-radius: 0 !important;
+			}
+			#findings-ml .bit-badge {
+				position: absolute; top: -6px; right: -6px; width: 22px; height: 22px;
+				border-radius: 50%; display: flex; align-items: center; justify-content: center;
+				box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+			}
+			#findings-ml .bit-badge.ok { background: #4a6741; }
+			#findings-ml .bit-badge.no { background: #b13507; }
+			#findings-ml .bit-label {
+				font-size: 0.24em; color: #888; margin-top: 3px; font-weight: 600;
+			}
 		</style>
 
 		<div class="fi-wrap">
-			<h2 style="color: #1a3a5c; font-size: 1.35em; border: none; padding: 0; margin: 0 0 16px 0;">Machine Learning Insights</h2>
+			<h2 style="color: #1a3a5c; font-size: 1.25em; border: none; padding: 0; margin: 0 0 10px 0;">Machine Learning Insights</h2>
 
 			<div class="fi-grid">
 				<div class="fs-funnel">
@@ -556,48 +594,81 @@
 				</div>
 
 				<div>
-					<table style="width: 100%; border-collapse: collapse; margin: 0 0 12px 0; background: rgba(255,255,255,0.95); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 18px rgba(26,58,92,0.08);">
+					<table class="metrics-compact">
 						<thead>
-							<tr style="background: #1a3a5c; color: #fff;">
-								<th class="metric-row" style="text-align: left; font-weight: 600;">Metric</th>
-								<th class="metric-row" style="text-align: center; font-weight: 600;">Train</th>
-								<th class="metric-row" style="text-align: center; font-weight: 600;">Test</th>
+							<tr>
+								<th>Metric</th>
+								<th>Train</th>
+								<th>Test</th>
 							</tr>
 						</thead>
-						<tbody class="metric-row">
-							<tr><td>Accuracy</td><td style="text-align:center;font-weight:700;color:#1a3a5c;">0.84</td><td style="text-align:center;font-weight:700;color:#4a6741;">0.81</td></tr>
-							<tr style="background: rgba(201,162,39,0.1);"><td>ROC AUC</td><td style="text-align:center;font-weight:700;color:#1a3a5c;">0.91</td><td style="text-align:center;font-weight:700;color:#4a6741;">0.88</td></tr>
-							<tr><td>Sensitivity</td><td style="text-align:center;">0.87</td><td style="text-align:center;">0.83</td></tr>
-							<tr><td>Specificity</td><td style="text-align:center;">0.82</td><td style="text-align:center;">0.80</td></tr>
-							<tr><td>F1 score</td><td style="text-align:center;">0.85</td><td style="text-align:center;">0.82</td></tr>
+						<tbody>
+							<tr><td>Accuracy</td><td class="num" style="color:#1a3a5c;">0.84</td><td class="num" style="color:#4a6741;">0.81</td></tr>
+							<tr class="hl"><td>ROC AUC</td><td class="num" style="color:#1a3a5c;">0.91</td><td class="num" style="color:#4a6741;">0.88</td></tr>
+							<tr><td>Sensitivity</td><td class="num" style="color:#1a3a5c;">0.87</td><td class="num" style="color:#4a6741;">0.83</td></tr>
+							<tr><td>Specificity</td><td class="num" style="color:#1a3a5c;">0.82</td><td class="num" style="color:#4a6741;">0.80</td></tr>
+							<tr><td>F1 score</td><td class="num" style="color:#1a3a5c;">0.85</td><td class="num" style="color:#4a6741;">0.82</td></tr>
 						</tbody>
 					</table>
 
-					<div style="padding: 14px 16px; border-left: 5px solid #c9a227; background: rgba(255,255,255,0.95); border-radius: 0 12px 12px 0; box-shadow: 0 4px 18px rgba(26,58,92,0.08);">
-						<div style="font-size: 0.36em; color: #c9a227; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">Key discovery</div>
-						<div style="font-size: 0.52em; color: #1a3a5c; line-height: 1.35;">
+					<div style="padding: 8px 12px; border-left: 4px solid #c9a227; background: rgba(255,255,255,0.95); border-radius: 0 10px 10px 0; box-shadow: 0 3px 12px rgba(26,58,92,0.07);">
+						<div style="font-size: 0.28em; color: #c9a227; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2px;">Key discovery</div>
+						<div style="font-size: 0.42em; color: #1a3a5c; line-height: 1.3;">
 							<strong>Phenolic –OH on an aromatic ring</strong> is strongly associated with anti-<i>Salmonella</i> activity.
 						</div>
-						<div style="font-size: 0.3em; color: #888; margin-top: 6px;">Model association · not proven causation</div>
+						<div style="font-size: 0.26em; color: #888; margin-top: 3px;">Model association · not proven causation</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="plant-row">
 				<div class="plant-card">
-					<img src="img/plants/botanical-oregano-cut.png" alt="Oregano">
+					<img class="plant-img" src="img/plants/botanical-oregano-cut.png" alt="Oregano">
 					<div class="pname">Oregano</div>
 					<div class="pmol">carvacrol</div>
+					<div class="bit-wrap">
+						<img src="img/bits/bit_1607.png" alt="Bit 1607 phenolic OH motif">
+						<span class="bit-badge ok" aria-label="Positive predictor">
+							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+						</span>
+					</div>
+					<div class="bit-label">Bit 1607</div>
 				</div>
 				<div class="plant-card">
-					<img src="img/plants/botanical-thyme-cut.png" alt="Wild thyme">
+					<img class="plant-img" src="img/plants/botanical-thyme-cut.png" alt="Wild thyme">
 					<div class="pname">Wild thyme</div>
 					<div class="pmol">thymol</div>
+					<div class="bit-wrap">
+						<img src="img/bits/bit_1607.png" alt="Bit 1607 phenolic OH motif">
+						<span class="bit-badge ok" aria-label="Positive predictor">
+							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+						</span>
+					</div>
+					<div class="bit-label">Bit 1607</div>
 				</div>
 				<div class="plant-card">
-					<img src="img/plants/botanical-clove-cut.png" alt="Clove">
+					<img class="plant-img" src="img/plants/botanical-clove-cut.png" alt="Clove">
 					<div class="pname">Clove</div>
 					<div class="pmol">eugenol</div>
+					<div class="bit-wrap">
+						<img src="img/bits/bit_1607.png" alt="Bit 1607 phenolic OH motif">
+						<span class="bit-badge ok" aria-label="Positive predictor">
+							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+						</span>
+					</div>
+					<div class="bit-label">Bit 1607</div>
+				</div>
+				<div class="plant-card">
+					<img class="plant-img" src="img/plants/botanical-blackpepper-cut.png" alt="Black pepper">
+					<div class="pname">Black pepper</div>
+					<div class="pmol">β-pinene</div>
+					<div class="bit-wrap">
+						<img src="img/bits/bit_549.png" alt="Bit 549 bicyclic pinene motif">
+						<span class="bit-badge no" aria-label="Negative predictor">
+							<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+						</span>
+					</div>
+					<div class="bit-label">Bit 549</div>
 				</div>
 			</div>
 		</div>

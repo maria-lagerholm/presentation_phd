@@ -517,14 +517,6 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   transform: none !important;
   transition: none !important;
 }
-.reveal .slides section.thank-you-slide #thank-you-lottie {
-  animation: none !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-  transition: none !important;
-  pointer-events: none;
-}
 .reveal h1 {
   border-bottom: 2px solid #c9a227;
   padding-bottom: 0.3em;

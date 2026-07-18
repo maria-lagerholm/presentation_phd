@@ -95,16 +95,6 @@ $overlayElementFgColor: 240, 240, 240;
 			}
 		}
 
-		&.thank-you-slide {
-			#thank-you-lottie {
-				animation: none !important;
-				opacity: 1 !important;
-				visibility: visible !important;
-				transform: none !important;
-				transition: none !important;
-				pointer-events: none;
-			}
-		}
 	}
 
 	h1 { border-bottom: 2px solid $academicGold; padding-bottom: 0.3em; display: inline-block; }

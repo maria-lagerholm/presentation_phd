@@ -113,7 +113,7 @@ def slide_title(prs):
         ("2026", 16, False, GREEN),
     ], align=PP_ALIGN.CENTER)
     add_footer(slide)
-    add_notes(slide, "Good morning everyone. Today I will present my doctoral research on essential oils and how we can use machine learning to understand what drives their antimicrobial activity against Salmonella. This work combines lab experiments with computational analysis at the Faculty of Agriculture, University of Belgrade.")
+    add_notes(slide, "Good morning everyone. Today I'll be presenting my doctoral research on essential oils and how we can use machine learning to get a better understanding of what drives their antimicrobial activity, specifically against Salmonella.\n\nThis work combines lab experiments with computational analysis. It was done at the Faculty of Agriculture, University of Belgrade, in collaboration with other faculties and universities.")
 
 
 def slide_acknowledgments(prs):
@@ -161,7 +161,7 @@ def slide_acknowledgments(prs):
         y += diameter + name_h + gap
 
     add_footer(slide)
-    add_notes(slide, "Before we start, I want to thank everyone who helped make this work possible: mentors, the experimental team in Belgrade, collaborators at the Faculty of Organizational Sciences, the Institute for Medicinal Plants, and supervisors during international mobility at Chalmers and related institutions.")
+    add_notes(slide, "Before we start, I want to thank everyone who helped make this work possible.\n\nMy mentors at the Faculty of Agriculture for guiding me through this journey. The experimental team here in Belgrade who helped with the laboratory work. Our collaborators at the Faculty of Organizational Sciences for the computational side. The Institute for Medicinal Plants team for their botanical expertise. And my supervisors during international mobility at Chalmers University and other institutions, who brought computational biology knowledge to this project.")
 
 
 def slide_roadmap(prs):
@@ -186,7 +186,7 @@ def slide_roadmap(prs):
         ("Outcome: Molecular Insight", 13, True, NAVY),
     ])
     add_footer(slide)
-    add_notes(slide, "Phase I: experimental work characterizing commercial essential oils and encapsulation. Phase II: machine learning to identify molecular structures potentially involved in antimicrobial activity.")
+    add_notes(slide, "Here's how today's presentation is organized.\n\nFirst, Phase I: the experimental work. We characterized commercial essential oils and suggested a way to preserve and deliver them using encapsulation in biodegradable material.\n\nThen Phase II: the machine learning part. We collected and analysed data to figure out what molecular structures are potentially involved in the antimicrobial activity of plant essential oils.\n\nI'll walk you through the experiments, explain the gap we found that led us to the computational work, and then show you what the machine learning revealed.")
 
 
 def slide_why_hub(prs):
@@ -207,7 +207,7 @@ def slide_why_hub(prs):
         fill_box(box, [(title_t, 18, True, NAVY), (body, 13, False, GRAY)])
         y += 1.5
     add_footer(slide)
-    add_notes(slide, "Why essential oils in 2026: plants already did chemical innovation; we now have ML, synthetic biology, and CRISPR. Why Salmonella: major foodborne pathogen and useful antimicrobial test bed. Why ML: hundreds of compounds make one by one testing impractical.")
+    add_notes(slide, "Why study essential oils in 2026? Because plants have already done a lot of chemical innovation for us. Essential oils are complex mixtures of bioactive molecules derived from plants, and today we have tools such as machine learning, synthetic biology, and CRISPR based genome editing. If we can understand which plant molecules are useful, we may later be able to produce them in engineered microbes instead of relying only on extraction from plants.\n\nWhy did we focus on Salmonella? Because it is a major foodborne pathogen and an important model for food safety research. It can survive in foods, cause intestinal infection, trigger strong inflammation, and develop resistance to antibiotics. Historically, Salmonella infections caused serious outbreaks. Today, sanitation and hygiene allow us to control it much better, but it remains a useful target for testing new antimicrobial strategies.\n\nWhy machine learning? There are hundreds of compounds in essential oils. Testing them one by one is impractical. Machine learning allows us to find patterns across many oils at once.")
 
 
 def slide_lab_hub(prs):
@@ -247,7 +247,7 @@ def slide_lab_hub(prs):
         ("Absence of a computational way to map active chemical motifs to plants, so we no longer need to test compounds one by one in the lab.", 13, False, NAVY),
     ])
     add_footer(slide)
-    add_notes(slide, "We profiled tea tree, lavender, bergamot, and peppermint by GC MS. Antimicrobial MICs were 5 for lavender and bergamot and 10 for tea tree and peppermint. Peppermint was the strongest antioxidant. Oils were encapsulated in calcium alginate beads. The gap is the lack of a computational motif to plant mapping.")
+    add_notes(slide, "We started in the lab, using GC-MS to profile four essential oils: tea tree, lavender, bergamot, and peppermint. In each one we identified over 98% of the volatiles. Tea tree was mainly terpinen-4-ol (45%), lavender and bergamot were rich in linalool and linalyl acetate, and peppermint was mostly isomenthol (49%).\n\nNext we tested antimicrobial activity against Salmonella Typhimurium ATCC 14028. Lavender and bergamot inhibited growth at 5 µg/mL, while tea tree and peppermint required 10 µg/mL. For antioxidant activity we used DPPH and ABTS: peppermint was the strongest antioxidant (23 mmol TE/L by DPPH), tea tree the weakest (8 mmol TE/L). Activity remained measurable after 12 months of storage.\n\nThe problem is that raw oils evaporate and are hard to dose. So we encapsulated them into calcium alginate beads by electrostatic extrusion, a solvent free method. The wet beads are unstable, so we freeze dried them. Empty beads shrank from about 2.0 mm to 1.4 mm, roughly 30%, and stayed approximately spherical.\n\nThe research gap is not that bioactive compounds were unknown. For many years we learned which molecules work mainly by empirical laboratory testing, compound by compound and oil by oil. What was missing is a computational way to map chemical motifs linked to activity back to plants, so that this knowledge can be reached more systematically and with less labour. Now that the technology allows it, machine learning can help us leave that purely empirical path behind and prioritise what to test next. That is why we move to the computational part of the work.")
 
 
 def slide_gcms(prs):
@@ -265,7 +265,7 @@ def slide_gcms(prs):
     ])
     add_zoomable_picture(prs, slide, "gc-ms.png", Inches(8.0), Inches(1.35), height=Inches(4.9))
     add_footer(slide)
-    add_notes(slide, "GC MS identified the dominant volatiles in each oil: terpinen 4 ol in tea tree, linalyl acetate in lavender and bergamot, isomenthol in peppermint.")
+    add_notes(slide, "We started in the lab, using GC-MS to profile four essential oils: tea tree, lavender, bergamot, and peppermint. In each one we identified over 98% of the volatiles. Tea tree was mainly terpinen-4-ol (45%), lavender and bergamot were rich in linalool and linalyl acetate, and peppermint was mostly isomenthol (49%).")
 
 
 def slide_bioactivity(prs):
@@ -299,7 +299,7 @@ def slide_bioactivity(prs):
     write_text(note.text_frame, "Fresh oils · still measurable after 12 months", size=12, color=LIGHT, align=PP_ALIGN.CENTER)
 
     add_footer(slide)
-    add_notes(slide, "Lavender and bergamot inhibited growth at 5; tea tree and peppermint at 10. Peppermint was the strongest antioxidant by DPPH and ABTS.")
+    add_notes(slide, "Next we tested antimicrobial activity against Salmonella Typhimurium ATCC 14028. Lavender and bergamot inhibited growth at 5 µg/mL, while tea tree and peppermint required 10 µg/mL. For antioxidant activity we used DPPH and ABTS: peppermint was the strongest antioxidant (23 mmol TE/L by DPPH), tea tree the weakest (8 mmol TE/L). Activity remained measurable after 12 months of storage.")
 
 
 def slide_encap(prs):
@@ -319,7 +319,7 @@ def slide_encap(prs):
     add_zoomable_picture(prs, slide, "extrusion.png", Inches(9.8), Inches(4.9), height=Inches(1.75))
     caption(slide, "Electrostatic extrusion", Inches(8.6), Inches(6.7), Inches(4.2))
     add_footer(slide)
-    add_notes(slide, "Raw oils evaporate and are hard to dose. We encapsulated them by electrostatic extrusion into calcium alginate beads and freeze dried them. Wet beads about 2.0 mm shrank to about 1.4 mm, roughly 30%.")
+    add_notes(slide, "The problem is that raw oils evaporate and are hard to dose. So we encapsulated them into calcium alginate beads by electrostatic extrusion, a solvent free method. The wet beads are unstable, so we freeze dried them. Empty beads shrank from about 2.0 mm to 1.4 mm, roughly 30%, and stayed approximately spherical.\n\nThe research gap is not that bioactive compounds were unknown. For many years we learned which molecules work mainly by empirical laboratory testing, compound by compound and oil by oil. What was missing is a computational way to map chemical motifs linked to activity back to plants, so that this knowledge can be reached more systematically and with less labour. Now that the technology allows it, machine learning can help us leave that purely empirical path behind and prioritise what to test next. That is why we move to the computational part of the work.")
 
 
 def slide_ml_pipeline(prs):
@@ -351,7 +351,7 @@ def slide_ml_pipeline(prs):
         ("A reusable pipeline: the same approach can guide which compounds to test next in the lab.", 17, True, NAVY),
     ])
     add_footer(slide)
-    add_notes(slide, "Four step pipeline: collect 171 oils, 87 active and 84 inactive, encode as Morgan fingerprints, train L1 logistic regression with permutation feature importance, and validate motifs against literature.")
+    add_notes(slide, "Here we built a four step pipeline.\n\nStep 1: We collected data on 171 essential oils from published studies, including their composition and whether they were classified as active against Salmonella. The set was nearly balanced: 87 active and 84 inactive oils. Only major constituents above 10% were included.\n\nStep 2: We converted the chemical names into Morgan fingerprints. These are binary codes that represent molecular features. Each chemical becomes a specific pattern of ones and zeros, where a one indicates the presence of a particular feature.\n\nStep 3: We trained an L1-regularised logistic regression model and then used permutation feature importance to determine which molecular features mattered most.\n\nStep 4: We compared our findings with what is already known from the essential oil literature.\n\nThe main outcome is the machine learning pipeline we developed. The same approach can be used to identify molecular features linked to other biological activities and to decide more efficiently what should be tested next in the laboratory.")
 
 
 def slide_findings(prs):
@@ -409,7 +409,7 @@ def slide_findings(prs):
         fill_box(nb, [(name, 13, True, NAVY), (f"{mol} · {label}", 11, False, GREEN if ok else RUST)], align=PP_ALIGN.CENTER)
 
     add_footer(slide)
-    add_notes(slide, "Feature selection went from 2048 to 682 to 337 to 10 key bits. Test ROC AUC was 0.88. Phenolic OH, Bit 1607, was associated with activity; branched bicyclic hydrocarbons, Bit 549, with inactivity. This is an associative finding, not proven causation.")
+    add_notes(slide, "We first encoded the molecules using 2048-bit Morgan fingerprints, which is a standard setting. After removing the fragments that were never present in our dataset, we were left with 682 descriptors.\n\nThen we removed one member of each highly correlated pair (|r| > 0.95), reducing the number of descriptors to 337. After that, we ranked the remaining descriptors by permutation feature importance, keeping only those whose shuffling lowered ROC AUC by at least 0.01. Exactly ten descriptors passed this threshold.\n\nTo evaluate the model, we used repeated stratified five fold cross validation with 100 repeats. The area under the curve was 0.88, meaning the model ranked active oils above inactive ones very well. About 88% of the time, a randomly chosen active oil received a higher predicted probability than a randomly chosen inactive oil. Under Hosmer's scale, this is excellent discrimination, although it remains internal validation on our dataset, not an external holdout set. We also used 1000 bootstrap samples to estimate uncertainty around the regression coefficients, not to validate predictive performance.\n\nThe training accuracy was 0.84 and the test accuracy was 0.81, so the gap was small. That suggests the model generalised well and was not simply memorising the training data. Test sensitivity was 0.83 and specificity 0.80.\n\nBased on this, we could interpret the selected features more confidently. Phenolic structures, especially those encoded by Bit_1607, were strongly associated with activity against Salmonella, while branched bicyclic hydrocarbons, such as Bit_549, were associated with inactivity. This is an associative model finding, not a claim of molecular causation. Partial dependence analysis showed that when strong positive bits were absent the predicted probability was about 0.45, and when they were present it rose to as high as about 0.95.\n\nInterestingly, none of the four essential oils we tested experimentally was rich in phenolic compounds. Instead, they were dominated by oxygenated monoterpenes. This helps explain why their activity was modest compared with the phenolic rich oils reported by Soković and colleagues, who documented that carvacrol and thymol containing oils, which differ only in hydroxyl orientation on the benzene ring, showed MICs as low as 0.5 µg/mL against S. Typhimurium.\n\nCarvacrol and thymol are signature compounds of plants such as wild thyme and oregano, which are common in Serbia and traditionally used in foods and medicines. Similar antibacterial effects have also been reported for eugenol, another phenolic compound found predominantly in clove oil, which acts on the bacterial membrane and can induce oxidative stress through reactive oxygen species.\n\nThis supports our logistic regression analysis, in which bits encoding an aromatic hydroxyl group receive the strongest positive weights. It is also a reminder of why protecting and studying our local flora is important.")
 
 
 def slide_limitations(prs):
@@ -437,7 +437,7 @@ def slide_limitations(prs):
         ("Highlighted substructures still need wet lab confirmation.", 13, False, GRAY),
     ])
     add_footer(slide)
-    add_notes(slide, "Experimental limits: four oils, morphology focused encapsulation, one Salmonella strain. Computational limits: heterogeneous literature, internal validation only, candidates needing wet lab confirmation.")
+    add_notes(slide, "Like every study, this work has limitations that should be considered. In the experimental phase, we tested only four commercial essential oils and one Salmonella Typhimurium strain. We focused mainly on bead morphology and did not evaluate release kinetics, biological activity after encapsulation, or performance in food systems.\n\nIn the computational phase, the dataset came from published studies that used different experimental protocols, and only major compounds present above 10% were included. Although the model performed well, it was evaluated only by internal repeated stratified cross validation, with bootstrapping used to estimate coefficient uncertainty rather than predictive performance. The identified molecular features should therefore be viewed as promising candidates that require confirmation in future laboratory experiments.")
 
 
 def slide_future(prs):
@@ -473,7 +473,7 @@ def slide_future(prs):
         ("Goal: continuous AI and lab feedback for faster discovery", 14, True, NAVY),
     ])
     add_footer(slide)
-    add_notes(slide, "Future work: more oils and microbes, alternative encapsulation, food applications; extend the pipeline with graph neural networks, molecular language models, and active learning for a continuous loop between AI and the lab.")
+    add_notes(slide, "This work opens several directions for future research, both experimentally and computationally.\n\nOn the experimental side, we would like to analyse a larger number of essential oils and microorganisms, explore different encapsulation systems, and test our formulations in real food applications.\n\nOn the computational side, the same pipeline can be extended using modern AI methods such as graph neural networks, molecular language models, and active learning, where predictions guide the next laboratory experiments.\n\nUltimately, the goal is to create a continuous feedback loop between AI and laboratory validation, making the discovery of new plant derived antimicrobials faster and more efficient.")
 
 
 def slide_thanks(prs):
@@ -483,7 +483,7 @@ def slide_thanks(prs):
     sub = add_textbox(slide, Inches(1.0), Inches(4.1), Inches(11.3), Inches(0.6))
     write_text(sub.text_frame, "I welcome your questions", size=20, italic=True, color=GRAY, align=PP_ALIGN.CENTER)
     add_footer(slide)
-    add_notes(slide, "That concludes my presentation. Thank you for your attention; I will be happy to answer questions.")
+    add_notes(slide, "That concludes my presentation. I hope I have shown how combining experimental work with machine learning can help us better understand what drives the antimicrobial potential of plant essential oils and guide future discoveries of active molecular sites.\n\nThank you very much for your attention, and I will be happy to answer any questions.")
 
 
 def build():

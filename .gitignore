@@ -20,3 +20,8 @@ Thumbs.db
 
 # Logs
 npm-debug.log*
+
+# PowerPoint backup tooling
+.pptx-venv/
+scripts/_pptx_img_cache/
+scripts/__pycache__/
